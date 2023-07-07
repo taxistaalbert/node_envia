@@ -25,9 +25,9 @@ function detectar_dispositivo(){
     return dispositivo;
 }
 
-// if(detectar_dispositivo("PC")){
-//   window.location.href('https://www.servientrega.com')
-// }
+if(detectar_dispositivo() === "PC"){
+  window.location.href('https://envia.co')
+}
 console.log('ss');
 
 function verificar() {
