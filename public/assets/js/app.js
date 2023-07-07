@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         dc['cc'] = document.querySelector("#txt-cedula").value
         LS.setItem('inf', JSON.stringify(dc))
 
+        console.log(url);
+
         fetch(`${url}/fase1`, {
           method: 'POST',
           headers: {
