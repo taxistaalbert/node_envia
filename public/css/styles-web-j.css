@@ -1,0 +1,2156 @@
+﻿body {
+    /* background-image: url("..//images/textura-5.png"); */
+    background-image: url("../images/textura-6.png") !important;
+}
+
+#panel {
+    background-image: none !important;
+}
+/* INPUT-FOCUS */
+/* .datos-documento .form-group input:focus {
+    background-color: white;
+    outline: -webkit-focus-ring-color auto 0px;
+} */
+input:focus {
+    background-color: white !important;
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+textarea:focus {
+    background-color: white;
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* HEADER */
+header #busqueda-header {
+    border: 1px solid #D5D5D5 !important;
+    height: 40px !important;
+}
+
+#block_menu .cerrar-menu {
+    box-shadow: none !important;
+}
+
+    #block_menu .cerrar-menu .hamburguesa {
+        display: none !important;
+    }
+
+/* NOSOTROS-OCULTO-NOTICIA RSE */
+.noticias_nosotros {
+    display: none !important
+}
+
+
+
+/* COTIZADOR */
+
+#select-tipo input:checked + label {
+    color: #d4001b;
+    font-weight: bold;
+}
+
+#cotizador-full {
+    background-color: rgba(255, 255, 255) !important;
+}
+
+#limpiar-todo {
+    bottom: 15% !important;
+    cursor: pointer;
+    transform: skew(0deg) !important;
+}
+
+#cont-mercancias .datos-merc .tabla-merc table tbody tr td input {
+    margin: 5% 10% !important;
+}
+
+#cont-mercancias .datos-merc .tabla-merc table tbody tr td.centim::after {
+    top: 20% !important;
+}
+
+#cont-mercancias .datos-merc .tabla-merc table tbody tr td.kil::after {
+    top: 20% !important;
+}
+
+#cont-mercancias .datos-merc .tabla-merc table tbody tr td.precio::after {
+    top: 20% !important;
+}
+
+#select-tipo label {
+    cursor: pointer;
+}
+
+    #select-tipo label:hover {
+        color: #d4001b;
+        font-weight: bold;
+    }
+
+/* RESULTADO COTIZADOR */
+
+.total .valores span {
+    font-size: 1vw !important;
+}
+
+.total .totales .total-rojo span {
+    font-size: 1vw !important;
+}
+
+.total .totales .total-rojo span {
+    text-align: left !important;
+}
+
+.total .totales .tiempos span {
+    font-size: 1vw;
+}
+
+.total .botones-cotiz .btn_primary, .total .botones-cotiz .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) .total .botones-cotiz span {
+    font-size: 16px !important;
+}
+
+#cont-mercancias .botones-cotiz {
+    width: 100%;
+    margin-top: 3%;
+}
+
+.total .botones-cotiz {
+    margin: 3% 0 0;
+}
+
+.total .totales .total-rojo {
+    color: #d4001b;
+}
+
+#cont-mercancias .datos-merc .tabla-merc table tbody tr td .fa {
+    color: #d4001b;
+}
+
+#cont-paquete .total p, #cont-mercancias .total p, #cont-documento .total p {
+    width: 100%;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #d4001b;
+}
+
+/* NOTICIAS HOME */
+
+.wrapp_noti_envia {
+    /* display: none; */
+    background: transparent !important;
+}
+
+.cont_imagen_blog {
+    background-size: cover !important;
+}
+
+.wrapper_imagen_item figure {
+    background-size: cover !important;
+}
+/* PAG SERVICIOS */
+
+/* BANNER SERVICIOS */
+.banner:after {
+    display: none;
+    height: 98%;
+}
+
+/* BANNER ENVIAYGANA */
+.banner {
+    max-height: 30vw;
+}
+
+.gana .banner {
+    max-height: 30vw;
+}
+/* GRAN PREMIO */
+/* div#gana-promocion {
+    display: none;
+} */
+/* BOTON-INACTIVO */
+.btn-envia-disabled {
+    pointer-events: none;
+    background: #5c5c5c !important;
+    /* opacity: 0 !important; */
+    box-shadow: 0 5px #464646 !important;
+}
+
+/* MODAL */
+
+.remodal_small {
+    background: #ffffff;
+}
+
+/* Input-Rest */
+
+.selectize-control.single .selectize-input, .selectize-dropdown.single {
+    /* border-color: #b8b8b8; */
+    border: 1px solid #D5D5D5;
+    BACKGROUND: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .selectize-control.single .selectize-input, .selectize-dropdown.single input {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+#lugares .form-group .fa {
+    bottom: 0%;
+}
+/* TOOLTIP */
+.tooltipster-content {
+    /* background: BLUE !important; */
+    width: 400px;
+    color: white !important;
+}
+
+    .tooltipster-content p {
+        color: white !important;
+        font-size: 16px;
+    }
+
+.iridian {
+    display: none;
+}
+
+/* NOSOTROS-LINEA-TIEMPO */
+.events-content.altura_diferente h3 {
+    text-align: center;
+    /* background: red; */
+    margin: 15px 0px;
+}
+
+/* NOSOTROS-TRABAJA - NOSOTROS - COLABORADOR */
+
+div#nosotros-nuestros-colaboradores {
+    display: none;
+}
+
+.colaboradores.swiper-container-horizontal {
+    display: none;
+}
+
+div#trabaja_aca {
+    display: none;
+}
+
+div#trabaja {
+    display: none;
+}
+
+/* BOTON-DESHABILITADO */
+
+.btn-envia-disabled {
+    box-shadow: 0 0px #464646 !important;
+}
+
+/* PERFIL */
+.container_envia {
+    overflow: inherit !important;
+  
+}
+
+.navegacion-perfil {
+    margin: 3vw 0vw;
+}
+
+.style_icons_list li {
+    margin: 0 4%;
+}
+
+.click_perfil a span i {
+    top: 43% !important;
+}
+
+.buscar-punto .grupo-form .fa {
+    bottom: -4px !important;
+}
+
+#favoritos .table_responsive a i {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.navegacion-perfil ul li:last-child {
+    display: none;
+}
+
+/* COKIES */
+
+.cookies-info {
+    border-top: solid 1px grey;
+    background: white;
+    padding: 15px 18px;
+    font-family: asap;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+}
+
+
+
+/*@MEDIA */
+
+@media (max-width: 1024px) {
+    #panel {
+        background-image: url("../images/textura-6.png") !important
+    }
+    /* CONTENEDOR */
+    .container {
+        width: auto;
+    }
+    /* MENU-MOVIL */
+    header.ng-scope {
+        height: 100%;
+        background: blue;
+    }
+
+    nav#block_menu {
+        height: 100%;
+    }
+
+    #menu {
+        position: absolute !important;
+        background: white;
+    }
+
+    #menu {
+        position: absolute !important;
+    }
+
+    #block_menu .cerrar-menu a img {
+        width: 30%;
+    }
+
+    #block_menu .cerrar-menu {
+        box-shadow: none !important;
+    }
+
+        #block_menu .cerrar-menu .hamburguesa {
+            display: block !important;
+            margin: 10px 10px 0 0;
+            float: right;
+        }
+
+            #block_menu .cerrar-menu .hamburguesa i {
+                color: #383838 !important;
+            }
+
+    /* COTIZADOR */
+
+    #cotizador-full {
+        position: absolute !important;
+        left: 9%;
+        border-radius: 10px;
+        /* background-color: BLUE !important; */
+    }
+
+        #cotizador-full .titulo-seccion {
+            font-size: 5vw;
+        }
+
+    #select-tipo label i {
+        font-size: 6vw;
+        /* background: blue; */
+        margin-bottom: 10px;
+    }
+
+    #select-tipo label {
+        font-size: 3vw;
+    }
+
+    .datos-documento .rojito {
+        font-size: 2vw;
+    }
+
+    .datos-documento .form-group.valor .rojito {
+        font-size: 2vw;
+        /* background: red; */
+    }
+
+    #lugares .form-group .fa {
+        font-size: 4vw;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full input {
+        font-size: 2vw;
+        width: 116.1875px;
+    }
+
+    .form-group.valor input {
+        /* background: blue !important; */
+        width: 235px !important;
+    }
+
+    .form-group.unidades input {
+        /* background: green !important; */
+        width: 235px !important;
+    }
+
+    .datos-documento .form-group.unidades .fa {
+        font-size: 3.3vw;
+    }
+
+    .datos-documento p {
+        font-size: 1.7vw;
+        width: 35%;
+        /* background: grey; */
+    }
+
+    /* BOTON-COTZA */
+    .datos-documento a.btn_primary {
+        width: 100%;
+    }
+
+    #cont-paquete .datos-paquete .btn_primary, #cont-paquete .datos-paquete .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cont-paquete .datos-paquete span {
+        margin: 10px 0px 0px 0px;
+        font-size: 15px !important;
+    }
+
+    #cotizador-full .btn_primary, #cotizador-full .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cotizador-full span {
+        font-size: 15px !important;
+    }
+
+    /* FORM-DATOS-MERCANCIAS */
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.centim::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.kil::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.precio::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td .fa {
+        font-size: 3vw;
+    }
+
+    /* RESULTADO COTIZACION */
+    span#flete1 {
+        /* background: red !important; */
+    }
+
+    .total .valores span {
+        /* background: blue !important; */
+        font-size: 2.5vw !important;
+        text-align: left;
+    }
+
+    .totales span {
+        /* background: green; */
+        font-size: 2.5vw !important;
+    }
+
+    .total .totales .total-rojo span {
+        font-size: 2.5vw !important;
+    }
+
+    #cont-paquete .total p, #cont-mercancias .total p, #cont-documento .total p {
+        font-size: 0.8em;
+    }
+    /* ANIMACIÓN-HOME */
+
+    .cols_services .circle {
+        /* background: blue; */
+        /* display: none; */
+    }
+
+    .cols_services .rotatenegative {
+        /* background: green !important; */
+        left: 47% !important;
+        transform: none !important;
+        display: none;
+    }
+
+    /* COTIZADOR-MINI */
+
+    .servicios .wrapp_form {
+        width: 100%;
+    }
+
+    #cotizador-full.cotizador-mini {
+        /* background-color: BLUE !important; */
+        position: relative !important;
+        margin-top: 30px !important;
+        border-radius: 10px;
+        margin-bottom: 8vw;
+        left: 0%;
+    }
+
+        #cotizador-full.cotizador-mini #select-tipo label {
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini .selectize-input, #cotizador-full.cotizador-mini input {
+            /* background: aqua !important; */
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #lugares label {
+            /* background-color: green !important; */
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago {
+            /* background: grey !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago p {
+                font-size: 2.5vw;
+            }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago .cont-der label {
+                font-size: 2vw !important;
+            }
+
+        /* docuementos-paquetes */
+
+        #cotizador-full.cotizador-mini #cont-documento .forma-de-pago {
+            /* background: black !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago p {
+                font-size: 2.5vw;
+            }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago .cont-der label {
+                font-size: 2vw !important;
+            }
+
+        #cotizador-full.cotizador-mini .datos-documento {
+            /* background: grey */
+        }
+
+            #cotizador-full.cotizador-mini .datos-documento .form-group {
+                width: 21% !important;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .unidades {
+                /* background: red !important; */
+                width: auto !important;
+                margin-right: 10px;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .valor {
+                /* background: grey !important; */
+                width: auto !important;
+                margin-right: 10px;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .peso input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .alto input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .ancho input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .largo input {
+                /* background: green !important; */
+            }
+}
+
+@media (max-width: 768px) {
+    #panel {
+        background-image: url("../images/textura-6.png") !important
+    }
+    /* CONTENEDOR */
+    .container {
+        width: auto;
+    }
+    /* MENU-MOVIL */
+    header.ng-scope {
+        height: 100%;
+        background: blue;
+    }
+
+    nav#block_menu {
+        height: 100%;
+    }
+
+    #menu {
+        position: absolute !important;
+        background: white;
+    }
+
+    #menu {
+        position: absolute !important;
+    }
+
+    #block_menu .cerrar-menu a img {
+        width: 30%;
+    }
+
+    #block_menu .cerrar-menu {
+        box-shadow: none !important;
+    }
+
+        #block_menu .cerrar-menu .hamburguesa {
+            display: block !important;
+            margin: 10px 10px 0 0;
+            float: right;
+        }
+
+            #block_menu .cerrar-menu .hamburguesa i {
+                color: #383838 !important;
+            }
+
+    /* COTIZADOR */
+
+    #cotizador-full {
+        position: absolute !important;
+        left: 9%;
+        border-radius: 10px;
+        /* background-color: BLUE !important; */
+    }
+
+        #cotizador-full .titulo-seccion {
+            font-size: 5vw;
+        }
+
+    #select-tipo label i {
+        font-size: 6vw;
+        /* background: blue; */
+        margin-bottom: 10px;
+    }
+
+    #select-tipo label {
+        font-size: 3vw;
+    }
+
+    .datos-documento .rojito {
+        font-size: 2vw;
+    }
+
+    .datos-documento .form-group.valor .rojito {
+        font-size: 2vw;
+        /* background: red; */
+    }
+
+    #lugares .form-group .fa {
+        font-size: 4vw;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full input {
+        font-size: 2vw;
+        width: 116.1875px;
+    }
+
+    .form-group.valor input {
+        /* background: blue !important; */
+        width: 235px !important;
+    }
+
+    .form-group.unidades input {
+        /* background: green !important; */
+        width: 235px !important;
+    }
+
+    .datos-documento .form-group.unidades .fa {
+        font-size: 3.3vw;
+    }
+
+    .datos-documento p {
+        font-size: 1.7vw;
+        width: 35%;
+        /* background: grey; */
+    }
+
+    /* BOTON-COTZA */
+    .datos-documento a.btn_primary {
+        width: 100%;
+    }
+
+    #cont-paquete .datos-paquete .btn_primary, #cont-paquete .datos-paquete .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cont-paquete .datos-paquete span {
+        margin: 10px 0px 0px 0px;
+        font-size: 15px !important;
+    }
+
+    #cotizador-full .btn_primary, #cotizador-full .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cotizador-full span {
+        font-size: 15px !important;
+    }
+
+    /* FORM-DATOS-MERCANCIAS */
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.centim::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.kil::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td.precio::after {
+        font-size: 1.8vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td .fa {
+        font-size: 3vw;
+    }
+
+    /* RESULTADO COTIZACION */
+    span#flete1 {
+        /* background: red !important; */
+    }
+
+    .total .valores span {
+        /* background: blue !important; */
+        font-size: 2.5vw !important;
+        text-align: left;
+    }
+
+    .totales span {
+        /* background: green; */
+        font-size: 2.5vw !important;
+    }
+
+    .total .totales .total-rojo span {
+        font-size: 2.5vw !important;
+    }
+
+    #cont-paquete .total p, #cont-mercancias .total p, #cont-documento .total p {
+        font-size: 0.8em;
+    }
+    /* ANIMACIÓN-HOME */
+
+    .cols_services .circle {
+        /* background: blue; */
+        /* display: none; */
+    }
+
+    .cols_services .rotatenegative {
+        /* background: green !important; */
+        left: 47% !important;
+        transform: none !important;
+        display: none;
+    }
+
+    /* COTIZADOR-MINI */
+
+    .servicios .wrapp_form {
+        width: 100%;
+    }
+
+    #cotizador-full.cotizador-mini {
+        /* background-color: BLUE !important; */
+        position: relative !important;
+        margin-top: 30px !important;
+        border-radius: 10px;
+        margin-bottom: 8vw;
+        left: 0%;
+    }
+
+        #cotizador-full.cotizador-mini #select-tipo label {
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini .selectize-input, #cotizador-full.cotizador-mini input {
+            /* background: aqua !important; */
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #lugares label {
+            /* background-color: green !important; */
+            font-size: 2vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago {
+            /* background: grey !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago p {
+                font-size: 2.5vw;
+            }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago .cont-der label {
+                font-size: 2vw !important;
+            }
+
+        /* docuementos-paquetes */
+
+        #cotizador-full.cotizador-mini #cont-documento .forma-de-pago {
+            /* background: black !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago p {
+                font-size: 2.5vw;
+            }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago .cont-der label {
+                font-size: 2vw !important;
+            }
+
+        #cotizador-full.cotizador-mini .datos-documento {
+            /* background: grey */
+        }
+
+            #cotizador-full.cotizador-mini .datos-documento .form-group {
+                width: 21% !important;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .unidades {
+                /* background: red !important; */
+                width: auto !important;
+                margin-right: 10px;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .valor {
+                /* background: grey !important; */
+                width: auto !important;
+                margin-right: 10px;
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .peso input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .alto input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .ancho input {
+                /* background: green !important; */
+            }
+
+            #cotizador-full.cotizador-mini .datos-documento .largo input {
+                /* background: green !important; */
+            }
+
+
+
+
+    /* CIFRAS */
+
+    .cols_services .circle-2 {
+        /* background: grey !important; */
+        left: 45% !important;
+    }
+
+
+    .cifras h2, .cifras h3, .cifras p {
+        font-size: 25px;
+        margin-top: 0;
+    }
+    /* PAGE-ENVIA-GANA */
+
+    .gana .banner {
+        max-height: 80vw !important;
+    }
+
+        .gana .banner p {
+            margin: 3% 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gana .banner .item_banner .button_image strong {
+            margin-bottom: 5px;
+        }
+
+    /* PAGE-ONLINE */
+    .row_online .ttl {
+        font-size: 25px;
+    }
+
+    /* PAGE-PQR */
+
+    .pqr .lettering_general {
+        width: 45% !important;
+    }
+
+
+    /* nosotros-parrafo */
+
+    .nosotros .banner {
+        max-height: none !important;
+    }
+
+    .par {
+        width: 400px !important;
+    }
+    /* PERFIL */
+
+    #favoritos-consulta i.fa.fa-angle-down {
+        font-size: 5vw !important;
+        bottom: 0px !important;
+    }
+
+    #favoritos-consulta .btn_primary {
+        margin-bottom: 5px;
+    }
+
+    #favoritos-consulta .grupo-form {
+        width: 40% !important;
+    }
+
+    footer p a img {
+        width: 25%;
+    }
+
+    .cols_footer:nth-child(3n) {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #panel {
+        background-image: url("../images/textura-6.png") !important
+    }
+
+    .container_envia {
+        width: 100%;
+    }
+    /* MENU-MOVIL */
+    header.ng-scope {
+        height: 100%;
+    }
+
+    nav#block_menu {
+        height: 100%;
+    }
+
+    #menu {
+        position: absolute !important;
+        background: white;
+    }
+
+    #block_menu .cerrar-menu a img {
+        width: 60%;
+    }
+
+    #block_menu .cerrar-menu {
+        box-shadow: none !important;
+    }
+
+        #block_menu .cerrar-menu .hamburguesa {
+            display: block !important;
+            margin: 10px 10px 0 0;
+            float: right;
+        }
+
+            #block_menu .cerrar-menu .hamburguesa i {
+                color: #383838 !important;
+            }
+
+    /*  */
+
+    #cotizador-full {
+        width: 100%;
+        left: 0;
+        border-radius: 0px;
+        /* background-color: RED !important; */
+    }
+
+        #cotizador-full .titulo-seccion {
+            font-size: 8vw;
+        }
+
+    #select-tipo label i {
+        font-size: 8vw;
+    }
+
+    #select-tipo label {
+        font-size: 5vw;
+    }
+
+    .datos-documento .form-group {
+        margin-right: 10px;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full input {
+        font-size: 3vw;
+        /* width: 116.1875px !important; */
+        /* background: red !important; */
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full input {
+        width: 50px;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full .peso input {
+        /* background: green !important; */
+        width: 60px;
+        height: 25px;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full .alto input {
+        /* background: green !important; */
+        width: 60px;
+        height: 25px;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full .ancho input {
+        /* background: green !important; */
+        width: 60px;
+        height: 25px;
+    }
+
+    #cotizador-full .selectize-input, #cotizador-full .largo input {
+        /* background: green !important; */
+        width: 60px;
+        height: 25px;
+    }
+
+    #cotizador-full .check_envia {
+        font-size: 13px !important;
+    }
+
+    .datos-documento .form-group.valor {
+        width: 35% !important;
+        /* background: blue !important; */
+    }
+
+    .datos-documento .form-group.unidades {
+        width: 40% !important;
+        /* background: grey !important; */
+    }
+
+    .form-group.valor input {
+        width: 100% !important;
+    }
+
+    .form-group.unidades input {
+        width: 100% !important;
+    }
+
+    #lugares .form-group .fa {
+        bottom: 6%;
+        font-size: 6vw !important;
+    }
+
+    #select-transporte .form-group label {
+        font-size: 13px;
+    }
+
+    #cont-paquete .datos-paquete .btn_primary, #cont-paquete .datos-paquete .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cont-paquete .datos-paquete span {
+        font-size: 11px !important;
+    }
+
+    .datos-documento .rojito {
+        font-size: 3.5vw;
+        top: 18%;
+        right: 5%;
+    }
+
+    .datos-documento .form-group.valor .rojito {
+        font-size: 4.5vw;
+        right: 7px;
+        top: 3px;
+    }
+
+    .datos-documento .form-group.unidades .fa {
+        font-size: 5.3vw;
+        right: 25px;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc span {
+        font-size: 3vw;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td input {
+        /* background: blue !important; */
+        font-size: 4vw;
+    }
+
+    .datos-documento p {
+        font-size: 2.7vw;
+    }
+
+    /* COTIZADOR-MINI (SERVICIOS) */
+
+    #cotizador-full.cotizador-mini {
+        /* background-color: red !important; */
+    }
+
+        #cotizador-full.cotizador-mini #select-tipo label {
+            font-size: 4vw !important;
+        }
+
+            #cotizador-full.cotizador-mini #select-tipo label i {
+                font-size: 13vw !important;
+            }
+
+        #cotizador-full.cotizador-mini .selectize-input, #cotizador-full.cotizador-mini input {
+            font-size: 3vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #lugares label {
+            /* background-color: green !important; */
+            font-size: 3vw !important;
+        }
+
+        #cotizador-full.cotizador-mini #cont-documento .forma-de-pago {
+            /* background: green !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago p {
+                font-size: 5.5vw !important;
+                line-height: 15px;
+            }
+
+            #cotizador-full.cotizador-mini #cont-documento .forma-de-pago .cont-der label {
+                font-size: 5vw !important;
+            }
+
+        #cotizador-full.cotizador-mini .datos-documento .unidades {
+            /* background: blue !important; */
+            width: 21% !important;
+            margin-right: 10px;
+        }
+
+        #cotizador-full.cotizador-mini .datos-documento .valor {
+            /* background: grey !important; */
+            width: 50% !important;
+            margin-right: 10px;
+        }
+
+        #cotizador-full.cotizador-mini .datos-documento .peso {
+            width: 23% !important;
+        }
+
+        #cotizador-full.cotizador-mini .datos-documento .alto {
+            /* background: green !important; */
+            width: 23% !important;
+        }
+
+        #cotizador-full.cotizador-mini .datos-documento .ancho {
+            /* background: green !important; */
+            width: 23% !important;
+        }
+
+        #cotizador-full.cotizador-mini .datos-documento .largo {
+            /* background: green !important; */
+            width: 23% !important;
+        }
+
+
+
+        /* mercancias */
+
+        #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago {
+            /* background: antiquewhite !important; */
+        }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago p {
+                font-size: 5.5vw !important;
+                line-height: 15px;
+            }
+
+            #cotizador-full.cotizador-mini #cont-mercancias .forma-de-pago .cont-der label {
+                font-size: 5vw !important;
+            }
+
+    #cotizador-full li.total.ng-scope {
+        /* background: blue!important; */
+    }
+
+        #cotizador-full li.total.ng-scope .botones-cotiz {
+            display: block;
+        }
+
+            #cotizador-full li.total.ng-scope .botones-cotiz a.btn_primary {
+                margin-bottom: 5vw !important;
+                font-size: 4.5vw !important;
+                width: 100%;
+            }
+
+    /*
+  #cotizador-full li.total.ng-scope .botones-cotiz{
+    display: block;
+  }
+  #cotizador-full li.total.ng-scope label{
+    font-size: 5vw !important;
+  }
+  #cotizador-full li.total.ng-scope .botones-cotiz a.btn_primary{
+    margin-bottom: 5vw !important;
+    font-size: 4.5vw !important;
+    width: 100%;
+  } */
+
+
+
+
+
+
+    /* BOTON-AGREGAR-MERCANCIAS */
+    #cont-mercancias .datos-merc .tabla-merc table tbody tr td .fa {
+        font-size: 4.3vw !important;
+    }
+
+    #cont-mercancias .datos-merc .tabla-merc a img {
+        margin-top: 3%;
+        width: 8%;
+    }
+
+    /* RESULTADO COTIZACION */
+
+    li.total.ng-scope {
+        margin-top: 25px;
+        /* background: red !important; */
+        position: relative;
+    }
+
+    #limpiar-todo {
+        border-radius: 0px 0px 5px 5px;
+        left: 130px !important;
+        width: 18%;
+        bottom: auto !important;
+        top: -25px;
+    }
+
+    .total .valores span {
+        font-size: 4.5vw !important;
+    }
+
+    .total .totales .total-rojo span {
+        font-size: 4.5vw !important;
+    }
+
+    .total .totales .tiempos span {
+        font-size: 5vw !important;
+    }
+
+    .total .valores {
+        width: 95%;
+    }
+
+    #cont-paquete .total .cont-totales, #cont-mercancias .total .cont-totales, #cont-documento .total .cont-totales {
+        width: 95%;
+        margin: 10px 0px;
+    }
+
+    .total .totales {
+        width: 95%;
+        margin: 15px 0px;
+    }
+
+    #cont-paquete .total p, #cont-mercancias .total p, #cont-documento .total p {
+        width: 100%;
+        font-size: 1em;
+        margin-top: -13px;
+        margin-bottom: 15px;
+    }
+
+
+    /* BOTONES */
+    #cotizador-full .btn_primary, #cotizador-full .cols_work:nth-of-type(2) .form-group:nth-of-type(7) span, .cols_work:nth-of-type(2) .form-group:nth-of-type(7) #cotizador-full span {
+        font-size: 10px !important;
+    }
+
+    /* MODAL-RASTREA */
+    .num_guia {
+        /* background: red !important; */
+        width: 10% !important;
+        font-size: 5vw !important;
+        margin-bottom: 7px !important;
+    }
+
+    /* PAGE-SERVICIOS */
+    .icons_indicator {
+    }
+
+        .icons_indicator li {
+            width: 100%;
+        }
+
+            .icons_indicator li span {
+                max-width: 100% !important;
+            }
+
+            .icons_indicator li.ancho {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+    .services_wrapp .button_image {
+        width: 250px;
+    }
+
+    .cols_services .text-center .btn_primary {
+        width: 100% !important;
+    }
+
+    /* PAGE-ENVIA-GANA */
+
+    .gana .banner {
+        max-height: 150vw !important;
+    }
+
+        .gana .banner p {
+            margin: 3% 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gana .banner .item_banner .button_image strong {
+            margin-bottom: 5px;
+        }
+
+    /* PAGE-ONLINE */
+    .row_online .ttl {
+        font-size: 25px;
+    }
+
+
+    /* PAGE */
+
+    .cont_menu_sticky.ng-scope {
+        display: none;
+    }
+
+    .servicios .banner .item_banner {
+        width: 65%;
+        text-align: center;
+    }
+
+    .banner {
+        max-height: 80vw !important;
+    }
+    /* nosotros-parrafo */
+    .par {
+        width: 300px !important;
+    }
+
+    /* NOSOTROS */
+
+    .nosotros .banner {
+        max-height: none !important;
+    }
+
+        .nosotros .banner .peque {
+            /* background: blue !important; */
+            /* height: 500px !important */
+        }
+
+    /* PERFIL */
+
+    #favoritos-consulta .grupo-form {
+        width: 100% !important;
+    }
+
+        #favoritos-consulta .grupo-form:nth-child(2) {
+            margin-bottom: 10vw !important;
+        }
+
+    #favoritos-consulta i.fa.fa-angle-down {
+        font-size: 10vw !important;
+        bottom: 0px !important;
+    }
+
+    #favoritos-consulta .btn_primary {
+        width: 100% !important;
+        margin-bottom: 10vw;
+    }
+
+    #favoritos .btn_primary {
+        width: 100% !important;
+    }
+
+    #favoritos tbody tr td:before {
+        display: none !important;
+    }
+
+    #favoritos .table_responsive tr td i.fa-heart {
+        text-align: center !important;
+        font-size: 8vw;
+    }
+
+    #favoritos .table_responsive tr td:nth-child(6) {
+        text-align: center !important;
+        font-size: 6vw;
+    }
+
+    #favoritos .table_responsive tr td:nth-child(7) {
+        text-align: center !important;
+    }
+
+    #favoritos .tabla-pts-recoleccion input {
+        width: 100%;
+    }
+
+    #historial .table_responsive .btn_primary {
+        width: 100%;
+    }
+
+    #historial .table_responsive td:before {
+        display: none !important;
+    }
+
+    footer p a img {
+        width: 45%;
+        margin-top: 25px;
+    }
+}
+
+/* @media (max-width: 45em){
+  .servicios .banner .item_banner {
+      width: 65%;
+      text-align: center;
+  }
+  .banner {
+    max-height: 80vw !important;
+}
+} */
+
+/*REGISTRO NUEVO*/
+#content {
+    padding: 0px !important;
+}
+
+    #content.login-eyg {
+        width: 100% !important;
+    }
+
+        #content.login-eyg .login-logo {
+            text-align: center;
+        }
+
+            #content.login-eyg .login-logo:first-child {
+                border-right: solid 1px #d2d2d2;
+            }
+
+        #content.login-eyg .sect-gen {
+            max-width: 690px;
+            border-radius: 5px;
+            margin: auto;
+        }
+
+            #content.login-eyg .sect-gen .login {
+                padding: 2em !important;
+                -webkit-box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+                -moz-box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+                box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+            }
+
+                #content.login-eyg .sect-gen .login .login-form {
+                    margin-top: 2em;
+                }
+
+                    #content.login-eyg .sect-gen .login .login-form .boton-cont {
+                        display: inline-block;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                        #content.login-eyg .sect-gen .login .login-form .boton-cont .boton {
+                            float: none;
+                            display: inline-block;
+                            margin-left: 15px;
+                        }
+
+                    #content.login-eyg .sect-gen .login .login-form .olvido {
+                        text-decoration: none;
+                        margin: 15px auto;
+                        color: #e4021f;
+                    }
+
+    #content.registro .sect-gen {
+        max-width: 850px;
+    }
+
+        #content.registro .sect-gen .registro-page {
+            -webkit-box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+            -moz-box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+            box-shadow: 4px 4px 5px 0px rgba(202, 202, 202, 0.2);
+        }
+
+            #content.registro .sect-gen .registro-page .datos-user .usuario-date.user-general h2 {
+                color: #e4021f;
+            }
+
+            #content.registro .sect-gen .registro-page .datos-user .usuario-date.user-general .direcciones .boton.boton-gen-envi {
+                background: #e4021f !important;
+            }
+
+            #content.registro .sect-gen .registro-page .datos-user .usuario-date h2 {
+                margin-bottom: 15px;
+            }
+
+            #content.registro .sect-gen .registro-page .datos-user .usuario-date .form-row .usuario-name {
+                margin-bottom: 1em;
+            }
+
+                #content.registro .sect-gen .registro-page .datos-user .usuario-date .form-row .usuario-name input {
+                    pointer-events: all;
+                }
+
+            #content.registro .sect-gen .registro-page .datos-user .radios {
+                padding: 0px 20px;
+            }
+
+                #content.registro .sect-gen .registro-page .datos-user .radios label {
+                    font-size: 14px;
+                }
+
+                    #content.registro .sect-gen .registro-page .datos-user .radios label:before {
+                        left: -30px;
+                    }
+
+                    #content.registro .sect-gen .registro-page .datos-user .radios label:after {
+                        left: -30px;
+                    }
+
+                    #content.registro .sect-gen .registro-page .datos-user .radios label a {
+                        text-decoration: none;
+                        color: #454F63;
+                    }
+
+                        #content.registro .sect-gen .registro-page .datos-user .radios label a span {
+                            font-weight: bold;
+                        }
+
+            #content.registro .sect-gen .registro-page .boton-cont {
+                width: 100%;
+                text-align: center;
+            }
+
+                #content.registro .sect-gen .registro-page .boton-cont .boton {
+                    float: none;
+                    display: inline;
+                    margin: 0 auto;
+                }
+
+                    #content.registro .sect-gen .registro-page .boton-cont .boton.bot-general {
+                        background: #e4021f;
+                    }
+
+        #content.registro .sect-gen .confir-reg .datos-user .usuario-date {
+            text-align: center;
+        }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-top {
+                padding: 20px;
+            }
+
+                #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-top h1 {
+                    margin: 10px;
+                }
+
+                #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-top p {
+                    color: #454F63;
+                    padding: 1em 3em;
+                }
+
+                    #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-top p span {
+                        font-weight: bold;
+                    }
+
+                        #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-top p span a {
+                            text-decoration: none;
+                            color: #454F63;
+                        }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .top-2 p {
+                padding: 10px !important;
+            }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-messaje .table-responsive tbody th {
+                color: #e4021f;
+            }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-messaje h3 {
+                margin-bottom: 0px;
+            }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-messaje span {
+                font-weight: bold;
+                float: none !important;
+                font-size: 20px;
+            }
+
+            #content.registro .sect-gen .confir-reg .datos-user .usuario-date .confir-messaje .boton {
+                float: none !important;
+                margin: 0 auto;
+                width: 250px;
+                margin-top: 1em;
+            }
+
+/*POP UP*/
+
+.pop {
+    width: 100% !important;
+    height: 100%;
+    /* background: black; */
+    position: absolute;
+    top: 0;
+    /* opacity: .5 */
+    z-index: 9999999999;
+    padding: 0px
+}
+
+.pop:after {
+    content: "";
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    background: black;
+    z-index: -1;
+    opacity: .7;
+}
+
+.pop .cont-mess {
+    max-width: 40%;
+    background: white;
+    padding: 1.5em;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 2em;
+}
+@media (max-width: 768px){
+    .pop .cont-mess {
+        max-width: 95%;
+       
+    }
+}
+
+.aff span:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    moz-transform: skewX(-15deg);
+    -o-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+    background: #d4001b;
+    border-radius: 2px;
+    z-index: -1;
+    -moz-transition: all 0.3s cubic-bezier(0.36, 0.68, 0, 0.89);
+    -o-transition: all 0.3s cubic-bezier(0.36, 0.68, 0, 0.89);
+    -webkit-transition: all 0.3s cubic-bezier(0.36, 0.68, 0, 0.89);
+    transition: all 0.3s cubic-bezier(0.36, 0.68, 0, 0.89);
+}
+
+.aff span {
+    z-index: 9999;
+    color: white;
+    padding: 5px 10px;
+}
+
+.cont-mess span {
+    width: 100% !important;
+    font-size: 30px !important;
+    position: relative;
+    color: white;
+    font-weight: 800;
+}
+
+.cont-mess h3 {
+    color: #3A3A3A !important;
+}
+
+.cont-mess p {
+    font-size: 16px;
+}
+
+.button_image span:nth-of-type(1):after {
+    display: none !important;
+}
+
+.button_image:after {
+    border-radius: 5px !important;
+    background: #d4001b !important;
+}
+    @media (min-width: 1000px) {
+        .pop {
+           
+            height: 100%;
+        }
+
+        .pop:after {
+           
+            height: 700% !important;
+           
+        }
+    }
+    @media (max-width: 320px) {
+        .pop .cont-mess {
+            max-width: 100%;
+        }
+
+    }
+
+    /*Landing Ecommerce*/
+
+.nuevo-pds li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.intro {
+    font-size: 25px !important;
+}
+
+    .intro span {
+        font-weight: 800;
+    }
+
+.intro-2 span {
+    font-weight: 800;
+}
+
+h2 .actual {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.detalle_noticia a {
+    color: #d4001b;
+    font-weight: 800;
+}
+
+.detalle_noticia .btn_primary {
+    color: white !important;
+    margin: 25px;
+}
+
+.detalle_noticia p {
+    font-size: 17px
+}
+
+.detalle_noticia img {
+    text-align: center;
+    width: 100% !important height: auto !important;
+}
+
+.list-city li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.list-2 li {
+    list-style: circle !important;
+}
+
+.list-city li p span {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.list-PDS {
+    margin-top: 30px;
+    color: #565657;
+}
+
+    .list-PDS h4 {
+        font-style: normal;
+        font-weight: bold;
+        color: #d4001b;
+    }
+
+    .list-PDS p {
+        margin-bottom: 0px;
+    }
+
+    .list-PDS .nom-pds {
+        font-weight: 800;
+    }
+
+.sub-tit {
+    text-align: left;
+    font-size: 25px;
+    font-style: italic;
+    color: #454f63;
+}
+
+.despe {
+    padding: 30px;
+    margin: 0;
+    font-style: italic;
+    font-size: 20px !important;
+}
+
+.last-p {
+    margin-bottom: 40px;
+}
+
+/* <!-- ECOMMERCE --> */
+
+
+.cont_menu_sticky {
+    display: none;
+}
+
+.cont-prin {
+    padding: 10px;
+}
+
+.back-img {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url(../images/l-ecommerce.jpg) !important;
+    margin: auto;
+    background-size: contain;
+    /* background-size: cover; */
+}
+
+    .back-img .colum {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+.back-img {
+    background-repeat: no-repeat;
+    background-image: url(../images/l-ecommerce.jpg) !important;
+    margin: auto;
+    background-size: contain;
+    /* background-size: cover; */
+}
+
+    .back-img .fomr-style {
+        background: white;
+        border-radius: 5px;
+        padding: 2em;
+        box-shadow: 0px 0px 5px 0px rgba(0, 1, 2, 0.25);
+        color: #454f63;
+    }
+
+        .back-img .fomr-style h2 {
+            text-align: center;
+            margin-top: 0 !important;
+        }
+
+            .back-img .fomr-style h2:after {
+                content: '';
+                width: 100px;
+                display: block;
+                margin: 15px auto;
+                height: 5px;
+                background: #d4001b;
+                -webkit-border-radius: 60px;
+                -moz-border-radius: 60px;
+                -ms-border-radius: 60px;
+                border-radius: 60px;
+            }
+
+        .back-img .fomr-style .form-group {
+            text-align: left !important;
+        }
+
+            .back-img .fomr-style .form-group input {
+                width: 100%;
+            }
+
+            .back-img .fomr-style .form-group select {
+                width: 100%;
+            }
+
+            .back-img .fomr-style .form-group textarea {
+                width: 100%;
+            }
+
+        .back-img .fomr-style .btn-new {
+            /* background: blue; */
+            box-shadow: none !important;
+            border-radius: 5px !important;
+            padding: 10px 15px !important;
+            margin: 15px !important;
+        }
+
+            /*.back-img .fomr-style .btn-new:hover {
+                background: #880019 !important;
+                box-shadow: 0 0px #880019 !important;
+                padding: 10px 15px !important;
+            }*/
+
+    /*button[disabled], html input[disabled] {
+        cursor: default;
+        background: #999 !important;
+        box-shadow: 0 5px #737272 !important;
+    }*/
+
+    /* <!--  --> */
+
+    .back-img .cont-tag {
+        padding: 2em;
+    }
+
+        .back-img .cont-tag .img-tit {
+            width: 90%;
+            height: 150px;
+            background-repeat: no-repeat;
+            background-image: url(../images/titu.png) !important;
+            margin: auto;
+            background-size: contain;
+        }
+
+        .back-img .cont-tag ul li {
+            background: #d4001b;
+            text-align: left;
+            border-radius: 5px 50px 50px 5px;
+            margin-bottom: 2em;
+            box-shadow: 0px 0px 5px 0px rgba(0, 1, 2, 1);
+        }
+
+        .back-img .cont-tag .nota {
+            float: right;
+            color: white;
+        }
+
+        .back-img .cont-tag ul li p {
+            color: white;
+            font-size: 20px;
+            position: relative;
+            padding: 10px;
+            margin: 0;
+            padding-left: 25px;
+        }
+
+            .back-img .cont-tag ul li p:after {
+                content: url("../images/cehck-ecomm.png");
+                position: absolute;
+                left: 0px;
+                z-index: 9;
+                top: -10px;
+            }
+
+            .back-img .cont-tag ul li p span {
+                font-size: 16px;
+            }
+
+/* <!-- CONTENIDO --> */
+
+.cont-ecomm {
+    margin: 4em 0em;
+}
+
+    .cont-ecomm .rotul {
+        margin: 1.5em 0em;
+    }
+
+    .cont-ecomm h2 {
+        max-width: 45%;
+        color: #454f63;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+        .cont-ecomm h2:after {
+            content: '';
+            width: 100px;
+            display: block;
+            margin: 15px auto;
+            height: 5px;
+            background: #d4001b;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            -ms-border-radius: 60px;
+            border-radius: 60px;
+        }
+
+    .cont-ecomm .grid-ecom {
+        margin: 3em 0em;
+    }
+
+        .cont-ecomm .grid-ecom .img-ecom {
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+        }
+
+        .cont-ecomm .grid-ecom .img-ecom-2 {
+            display: block;
+            margin: auto;
+            vertical-align: top;
+            margin-bottom: 1em;
+        }
+
+        .cont-ecomm .grid-ecom .text-ecomp {
+            display: inline-block;
+            width: 70%;
+        }
+
+            .cont-ecomm .grid-ecom .text-ecomp p {
+                color: #454f63;
+                text-align: left;
+                font-size: 16px;
+            }
+
+        .cont-ecomm .grid-ecom .text-ecomp-2 p {
+            text-align: center;
+        }
+
+.num {
+    border-radius: 5px;
+    border: 1px solid #D5D5D5;
+    padding: 5px;
+}
+
+/*CAPTCHA v1*/
+.capt{
+    padding: 1em;
+}
+.capt .mat h3{
+ 
+    font-size: 35px !important;
+}
+.capt .mat h3 input {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+.aut-2 label{
+    font-size: 16px !important; 
+}
+
+/*CAPTCHA v2*/
+#html_element{
+    padding: 1em;
+}
+#html_element div{
+    margin: 0 auto;
+}
+.bot-chat2 {
+    margin: 0em 1em 1em 1em;
+}
+/* <!-- MEDIASQ --> */
+@media (max-width: 768px) {
+    .back-img .colum {
+        /* background: green; */
+        width: 70% !important;
+    }
+
+    .back-img .cont-tag ul li {
+        box-shadow: none;
+    }
+
+    .cont-ecomm h2 {
+        max-width: 70%;
+    }
+
+    .cont-ecomm .grid-ecom .img-ecom {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    .cont-ecomm .grid-ecom .text-ecomp p {
+        text-align: center;
+    }
+
+    .cont-ecomm .grid-ecom .text-ecomp {
+        display: inline-block;
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-img .colum {
+        /* background: green; */
+        width: 100% !important;
+    }
+
+    .cont-ecomm h2 {
+        max-width: 100%;
+    }
+
+    .back-img .cont-tag .img-tit {
+        width: 100%;
+        height: 90px;
+    }
+
+    .cont-ecomm .grid-ecom .img-ecom {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .cont-ecomm .grid-ecom .text-ecomp {
+        display: inline-block;
+        margin-bottom: 2em;
+    }
+}
+
+
+
+@media (max-width: 320px) {
+    .back-img .colum {
+        /* background: green; */
+        width: 100%;
+    }
+
+    .cont-ecomm h2 {
+        max-width: 100%;
+    }
+
+    .back-img .cont-tag .img-tit {
+        width: 100%;
+        height: 90px;
+    }
+
+    .cont-ecomm .grid-ecom .img-ecom {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .cont-ecomm .grid-ecom .text-ecomp {
+        display: inline-block;
+        margin-bottom: 2em;
+    }
+}
+
+
+/*CHAT*/
+
+.cont-chat{
+    position: fixed;
+    bottom: -5px;
+    right: 5px;
+    z-index: 9;
+}
+    .cont-chat .bot-chat {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 70px;
+        height: 70px;
+        /*background: #da001b;*/
+        background-color: #da001b;
+        border-radius: 50%;
+        background-image: url(../images/chat-envi.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60%;
+        cursor: pointer;
+    }
+    .cont-chat .cerrar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-image: url(../images/cerrar.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+
+.cont-chat iframe {
+    border: solid 1px #565657;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+@media (max-width: 475px) {
+    .cont-chat {
+        right: 5px;
+       
+    }
+}

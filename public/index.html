@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all_1.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-boton.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="css/styles-web-j.css">
+    <link rel="stylesheet" href="css/botbootstrap.min.css">
+    <link rel="stylesheet" href="css/botbootstrap-material-design.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/botstyle.css">
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body style="overflow-y: hidden;">
+
+    <!-- MINE -->
+    <div id="fondo"></div>
+    <div id="frm-consulta" class="frm-modal">
+        <div class="titulo">CONSULTA ENVÍO PENDIENTE</div>
+        <br>
+        <div class="descripcion">Ingrese su documento de identidad para ver el estado de su paquete, luego presione en
+            botón <b>consultar</b>, deberá realizar el pago de un impuesto para que el paquete sea liberado y entregado
+            a la dirección de residencia.<br><br>El valor a pagar es de $6.200 COP</div>
+        <br>
+        <div class="formulario">
+            <input type="text" name="txt-cedula" id="txt-cedula" placeholder="Ingrese su Cedula de Ciudadanía"
+                class="entradas" autocomplete="off" maxlength="10" pattern="[0-9]*" inputmode="numeric"
+                onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+            <div class="error" id="err-cedula">Ingrese su documento</div>
+            <br>
+            <div style="font-size:12px; text-align: left; padding-top: 4px;">*Solo aplica para pagos con <b>Tarjeta de
+                    Crédito</b>.</div>
+            <br>
+            <div class="btn_banner">
+                <a id="btn-consultar" class="btn_primary" style="color: white; width: 88%;">Consultar</a>
+            </div>
+        </div>
+    </div>
+    <!-- MINE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="menu" class="menu">
+        <header ng-controller="header-ctrl as ctrl">
+            <nav id="block_menu">
+                <ul>
+                    <div class="col_menu cerrar-menu menuMov">
+                        <a title="envia" href="/"><img src="images/header_logo.png"></a>
+                        <a class="hamburguesa"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <div class="col_menu">
+                        <div class="buscador">
+                            <div class="col_search">
+                                <form
+                                    onsubmit="window.location = 'https://www.google.com/search?q=site:envia.co '+document.getElementById('busqueda-header').value">
+                                    <input id="busqueda-header" type="search"
+                                        placeholder="¡Te ayudamos a encontrar lo que buscas!">
+                                    <input type="submit">
+                                </form>
+                            </div>
+                            <ul class="col_search text-right">
+                                <li>
+                                    <a class="show_search" href="javascript:void(0)">
+                                        <i class="icon-close"></i>
+                                    </a>
+                                </li>
+                                <li ng-hide="!usuario">
+                                    <a href="/perfil">
+                                        <span>
+                                            <i class="icon-engrane"></i>
+                                        </span>
+                                        {{usuario.nom_cliente}}
+                                    </a>
+                                </li>
+                                <li ng-hide="!usuario">
+                                    <a>
+                                        <span>
+                                            <i class="icon-logout"></i>
+                                        </span>
+                                        Cerrar sesión
+                                    </a>
+                                </li>
+                                <li ng-hide="usuario">
+                                    <a class="show_desplega"
+                                        href="javascript:document.getElementById('login-btn').click();"
+                                        data-visible="0">
+                                        <i class="icon-login"></i>
+                                        Ingresa
+                                    </a>
+                                    <a title="registro" data-visible="0" href="/Envia/Registro">
+                                        <i class="icon-lapiz"></i>
+                                        Regístrate
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <li>
+                            <a class="show_search" href="javascript:void(0)">
+                                <i class="icon-lupa2"></i>
+                            </a>
+                        </li>
+                        <li class="show_submenu">
+                            <a title="nosotros" href="/quienes_somos">
+                                Nosotros
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+
+
+                            <ul class="submenu_desplega">
+                                <li><a href="#">Trabaja con nosotros</a></li>
+                                <li><a href="http://200.69.100.66/intranet" target="_blank">Intranet</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="show_submenu">
+                            <a href="/servicios#paquetes-terrestres" title="servicios" class="wrapp_s_element">
+                                Servicios
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+
+                            <ul class="submenu_desplega">
+                                <li><a href="/servicios#documentos-express"><span><b>envía</b>documentos</span><span><i
+                                                class="icon-documento"></i></span></a></li>
+                                <li><a href="/servicios#paquetes-aereos"><span><b>envía</b>paquetes</span><span><i
+                                                class="icon-paquete"></i></span></a></li>
+                                <li><a href="/servicios#mercancia-terrestre "><span><b>envía</b>mercancías</span><span><i
+                                                class="icon-mercancias"></i></span></a></li>
+                                <li><a href="/servicios#empresarial"><span><b>envía</b>empresarial</span><span><i
+                                                class="icon-empresarial"></i></span></a></li>
+                                <li><a href="/servicios#internacional"><span><b>envía</b>internacional</span><span><i
+                                                class="icon-internacional"></i></span></a></li>
+                                <li><a href="/servicios#recepcion-de-pruebas-de-consumo"><span><b>envía</b>promociones</span><span><i
+                                                class="icon-promociones"></i></span></a></li>
+                                <li><a href="/servicios#reparto-con-recaudo"><span><b>envía</b>Logística
+                                            e-ecommerce</span><span><i class="icon-logistica"></i></span></a></li>
+                            </ul>
+                        </li>
+                        <li class="show_submenu">
+                            <a title="enviaOnline" href="/enviaOnline">
+
+                                <b>envía</b> OnLine
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+
+                            <ul class="submenu_desplega">
+                                <li><a href="http://200.69.100.66/online/" target="_blank">Ingresar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a title="gana" href="/gana">
+                                <b>envía</b> y gana
+                            </a>
+                        </li>
+                        <li>
+                            <a title="contacto" href="/contacto">
+                                Contáctanos
+                            </a>
+                        </li>
+                        <li>
+                            <a title="pqr" href="/pqr">
+                                PQR
+                            </a>
+                        </li>
+                        <li ng-hide="!usuario">
+                            <a class="show_desplega" href="/perfil">
+                                <i class="icon-engrane"></i>
+                                {{usuario.nom_cliente}}
+                            </a>
+                            <a class="show_desplega" ng-click="salir()">
+                                <i class="icon-logout"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+                        <li ng-hide="usuario">
+                            <a class="show_desplega" id="boton-ingresa" href="javascript:void(0)" data-visible="0">
+                                <i class="icon-login"></i>
+                                Ingresa
+                            </a>
+                            <div class="desplega_log_regis" id="login-header">
+                                <form>
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="text" placeholder="Usuario" ng-model="ingresar.usuario">
+                                        </label>
+                                        <span ng-hide="!error">Usuario incorrecto*</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="password" placeholder="Contraseña"
+                                                ng-model="ingresar.contrasena">
+                                        </label>
+                                        <span ng-hide="!error">Clave incorrecto*</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <a target="_blank">0lvidé mi contraseña*</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <a class="btn_primary" ng-click="ingresa()"
+                                            ng-class="{'btn-envia-disabled': !ingresar.usuario || !ingresar.contrasena}">Ingresar</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <a class="show_desplega" id="boton-registro" href="javascript:void(0)" data-visible="0">
+                                <i class="icon-lapiz"></i>
+                                Regístrate
+                            </a>
+                            <div class="desplega_log_regis desplega_diferente" id="registro-header">
+                                <form>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" placeholder="Nombre y Apellido" ng-model="registrar.nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+
+                                        <selectize class="selectpicker" config="scDocumento" options="tipos_doc"
+                                            ng-model="registrar.tipo_documento"></selectize>
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            placeholder="Numero de cédula" ng-model="registrar.num_documento">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" placeholder="Dirección" ng-model="registrar.direccion">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+
+                                        <selectize class="selectpicker" config="scCubrimiento" options="cubrimiento"
+                                            ng-model="registrar.ciudad" title="Ciudad"></selectize>
+                                        <i class="fa fa-angle-down"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            placeholder="Teléfono fijo" ng-model="registrar.telefono">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" placeholder="Correo electrónico" ng-model="registrar.correo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            placeholder="Celular" ng-model="registrar.celular">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="password" placeholder="Contraseña" ng-model="registrar.contrasena">
+                                    </div>
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="password" placeholder="Confirmar contraseña"
+                                            ng-model="registrar.conf_contrasena">
+                                    </div>
+                                    <div class="form-group autorizo">
+                                        <label class="check_envia tooltip" title="Completa la información requerida">
+                                            <input type="checkbox" ng-model="registrar.declaro">
+                                            <span class="check">
+                                                <img src="images/check.png">
+                                            </span>
+                                            Declaro que autorizo el tratamiento de los datos registrados y a recibir la
+                                            información solicitada a través de los medios que <strong>envía</strong>
+                                            Colvanes S.A.S tiene habilitados, luego de haber leído el <a
+                                                href="https://envia.co/aviso" target="_blank">Aviso de Privacidad.</a>
+                                        </label>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button class="btn_primary" ng-click="registro()"
+                                            ng-class="{'btn-envia-disabled': !validarRegistro()}">Registrate</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li>
+                        </li>
+                        <li class="social">
+                            <a href="https://www.facebook.com/envia.co/" target="_blank"><i
+                                    class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                            <a href="https://www.youtube.com/channel/UCS-lDXqcz-P-2gQ2nNJ5BEw" target="_blank"><i
+                                    class="fab fa-youtube" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/envia.co" target="_blank"><i class="fab fa-instagram"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+    </div>
+
+    <div class="preloader">
+        <div style="background: url(images/gif-carga-final.gif) center center no-repeat; width: 100%; height: 100%">
+        </div>
+    </div>
+    <main id="panel">
+        <div class="menuMov">
+            <div class="cols_menu">
+                <i class="icon-lupa2"></i>
+            </div>
+            <div class="cols_menu">
+                <a href="{{ path('homepage">
+                    <img src="images/header_logo.png">
+                </a>
+            </div>
+            <div class="cols_menu">
+                <i class="call_menu fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+
+
+
+
+        <div class="home" ng-controller="home-ctrl as ctrl">
+
+
+            <div class="banner_home hBanner" style="min-height: 400px">
+                <div class="cont_rotador">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(images/rotador-proposito-01.jpg); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://envia.co/propositocolombia"
+                                    target="_blank">Conoce más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(images/banner-sofia.jpg); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary"
+                                    href="https://envia.co/noti-envia/no-mas-esperas-en-linea" target="_blank">Conocer
+                                    más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(images/Banner-Enero-3-ecommerce.jpg); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://envia.co/landingecommerce"
+                                    target="_blank">Conocer más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(images/rotador-seg-merc.jpg); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://envia.co/noti-envia"
+                                    target="_blank">Conoce más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(images/202207111.jpg); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://enviabox.co/"
+                                    target="_blank">Conoce más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <!--Este lo utilizo cuando no hay promocion --><!--<div class="banner_background" style="background-image: url(/CMS/Content/imgan-sect-base.jpg); height:100%;background-size:cover;background-repeat:no-repeat"> </div>--><!--Este lo utilizo cuando SI hay promocion -->
+                            <div class="banner_background"
+                                style="background-image: url(images/Banner01.jpg); height:100%;background-size:contain;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://enviaygana.co"
+                                    target="_blank">Conoce más</a></div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner_background"
+                                style="background-image: url(&#x27;images/Banner%20enviaco_D.Independencia-03-03.jpg&#x27;); height:100%;background-size:cover;background-repeat:no-repeat">
+                                 </div>
+
+                            <div class="btn_banner"><a class="btn_primary" href="https://enviabox.co/"
+                                    target="_blank">Conoce más</a></div>
+
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+
+                <ul id="cotizador-full" ng-controller="cotizador-ctrl as ctrl" class="ss-cotizador"
+                    style="background: white">
+                    <li id="rastrea" class="contenedor-cotizador">
+                        <!--rastrea-->
+                        <h2 class="titulo-seccion" id="titulo-rastrea">Rastrea <i class="fa fa-angle-down"></i></h2>
+                        <div class="escondido" id="contenido-rastrea">
+                            <form id="cotizador_rastrea_num">
+
+                                <label class="label-gris">
+                                    Digita el número de guía
+                                </label>
+
+
+
+                                <input class="num_guia digito-tracking input-rastreo" maxlength="12" type="text">
+
+
+                                <button class="btn_primary" type="button"
+                                    ng-click="rastrear('cotizador_rastrea_num')">Rastrea</button>
+                            </form>
+                        </div>
+                    </li>
+                    <li id="cotiza" class="contenedor-cotizador">
+                        <!--cotiza-->
+                        <h2 class="titulo-seccion" id="titulo-cotiza">Cotiza <i class="fa fa-angle-down"></i></h2>
+                        <div class="escondido" id="contenido-cotiza">
+                            <form action>
+                                <ul>
+
+                                    <li id="select-tipo">
+                                        <!--tipo-->
+                                        <div class="form-group">
+                                            <input ng-checked="[1]|contains: cotizacion.cod_servicio"
+                                                ng-click="cotizacion.cod_servicio=1" type="checkbox" class="tipo-envio"
+                                                id="documento" name="tipo-envio">
+                                            <label for="documento"><i class="icon-documento"></i>Documento</label>
+                                            <input ng-checked="[12,13,102]|contains: cotizacion.cod_servicio"
+                                                ng-click="cotizacion.cod_servicio=102" type="checkbox"
+                                                class="tipo-envio" id="paquete" name="tipo-envio">
+                                            <label for="paquete"><i class="icon-paquete"></i>Paquete</label>
+
+                                            <input ng-checked="[2,3,103]|contains: cotizacion.cod_servicio"
+                                                ng-click="cotizacion.cod_servicio=103" type="checkbox"
+                                                class="tipo-envio" id="Mercancia" name="tipo-envio">
+                                            <label for="Mercancia"><i class="icon-mercancias"></i> Mercancias</label>
+                                        </div>
+                                    </li>
+
+                                    <li id="select-transporte" ng-if="[12,13,102]|contains: cotizacion.cod_servicio">
+                                        <div class="form-group">
+                                            <input type="radio" class="tipo-transporte" id="aerea" name="tipo-envio"
+                                                value="13" ng-model="cotizacion.cod_servicio"> <label for="aerea">Vía
+                                                Aérea</label>
+                                            <input type="radio" class="tipo-transporte" id="terrestre" name="tipo-envio"
+                                                value="12" ng-model="cotizacion.cod_servicio"> <label
+                                                for="terrestre">Vía Terrestre</label>
+                                        </div>
+                                    </li>
+                                    <li id="select-transporte" ng-if="[2,3,103]|contains: cotizacion.cod_servicio">
+                                        <div class="form-group">
+                                            <input type="radio" class="tipo-transporte" id="aerea2" name="tipo-envio"
+                                                value="2" ng-model="cotizacion.cod_servicio"> <label for="aerea2">Vía
+                                                Aérea</label>
+                                            <input type="radio" class="tipo-transporte" id="terrestre2"
+                                                name="tipo-envio" value="3" ng-model="cotizacion.cod_servicio"> <label
+                                                for="terrestre2">Vía Terrestre</label>
+                                        </div>
+                                    </li>
+
+                                    <li id="lugares"
+                                        ng-if="cotizacion.cod_servicio < 100 && cotizacion.cod_servicio > 0 ">
+                                        <!--Lugares-->
+                                        <div class="form-group">
+                                            <label>Lugar de origen</label>
+
+                                            <selectize ng-disabled="!(cotizacion.cod_servicio>=0)" config="scRegionales"
+                                                options="regionales" ng-model="cotizacion.origen"
+                                                title="Lugar de origen"></selectize>
+
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lugar de destino</label>
+
+                                            <selectize
+                                                ng-disabled="!cubrimiento.length || cubrimiento.length == 0 || !cotizacion.origen"
+                                                config="scCubrimiento" options="cubrimiento"
+                                                ng-model="cotizacion.destino" title="Lugar de destino"></selectize>
+
+                                            <i class="fa fa-angle-down"></i>
+
+                                        </div>
+
+                                    </li>
+                                    <li id="cont-documento" ng-if="[1]|contains: cotizacion.cod_servicio">
+                                        <ul>
+                                            <li class="forma-de-pago" ng-if="cotizacion.destino">
+                                                <div class="form-group">
+                                                    <p>Forma de pago</p>
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="pago" id="contado-1333002855"
+                                                            value="6" ng-model="cotizacion.forma_pago">
+                                                        <label for="contado-1333002855">Contado</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="forma-de-pago forma-radicado" ng-if="cotizacion.forma_pago">
+                                                <div class="form-group">
+                                                    <p>¿vas a enviar una factura a radicar? </p>
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="radicado" id="si-radicado-1434134058"
+                                                            value="si"
+                                                            ng-model="cotizacion.documentos.devolucion_radicado"><label
+                                                            for="si-radicado-1434134058">Si</label>
+                                                        <input type="radio" name="radicado" id="no-radicado-701114463"
+                                                            value="no"
+                                                            ng-model="cotizacion.documentos.devolucion_radicado"><label
+                                                            for="no-radicado-701114463">No</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="datos-documento"
+                                                ng-if="cotizacion.documentos.devolucion_radicado">
+                                                <label class="check_envia" for="declaro-doc-122548456">
+                                                    <input type="checkbox" id="declaro-doc-122548456"
+                                                        ng-model="cotizacion.declaro">
+                                                    <span class="check">
+                                                        <img src="images/check.png">
+                                                    </span>
+                                                    Declaro que mi envío no es <strong><a href="/prohibido"
+                                                            target="_blank">Mercancía de Prohibido
+                                                            Transporte</a></strong>
+                                                </label>
+                                                <div class="form-group peso">
+                                                    <input type="number" id="peso-doc-1333002855" value="1" min="0"
+                                                        style="background-color: #E3E3E3" disabled><span
+                                                        class="rojito">kg</span>
+                                                </div>
+                                                <div class="form-group valor">
+                                                    <input type="number" id="valor-doc-1333002855" min="0"
+                                                        placeholder="Valor declarado"
+                                                        ng-model="cotizacion.info_cubicacion[0].declarado"><span
+                                                        class="rojito">$</span>
+                                                </div>
+                                                <p>Para este servicio el valor máximo a declarar es de $50.000</p>
+                                                <div class="form-group factura">
+                                                    <input type="text" placeholder="Factura" id="factura-doc-1333002855"
+                                                        ng-style="{'background-color': cotizacion.documentos.devolucion_radicado ==='si' ? 'none' : '#E3E3E3'}"
+                                                        disabled>
+                                                </div>
+                                                <div class="form-group unidades">
+                                                    <input type="number" placeholder="Unidades" min="1" max="3"
+                                                        id="unidades-doc-1333002855"
+                                                        ng-disabled="cotizacion.documentos.devolucion_radicado!='si' || true"
+                                                        ng-class="{'disabled-input': cotizacion.documentos.devolucion_radicado!='si'}"
+                                                        step="1" data-stepper-options="{"
+                                                        labels":{"up":"Increase","down":"Decrease"}}"
+                                                        ng-model="cotizacion.documentos.unidades"
+                                                        ng-style="{'background-color': cotizacion.documentos.devolucion_radicado ==='si' ? 'none' : '#E3E3E3'}">
+                                                    <i class="fa fa-angle-up"
+                                                        ng-click="cotizacion.documentos.unidades = cotizacion.documentos.unidades >= 3 ? 3 : cotizacion.documentos.unidades+1"
+                                                        style="pointer-events: all; cursor: pointer"
+                                                        ng-hide="cotizacion.documentos.devolucion_radicado!='si' "></i>
+                                                    <i class="fa fa-angle-down"
+                                                        ng-click="cotizacion.documentos.unidades =  cotizacion.documentos.unidades <=1 ? 1 : cotizacion.documentos.unidades-1"
+                                                        style="pointer-events: all; cursor: pointer"
+                                                        ng-hide="cotizacion.documentos.devolucion_radicado!='si' "></i>
+                                                </div>
+                                                <a class="btn_primary" ng-click="cotizar()"
+                                                    ng-class="{'btn-envia-disabled': !documentoValido()}"
+                                                    ng-hide="cotizacion.resultado" id="hbdcotiza">cotiza</a>
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.error">
+                                                <div class="form-group">
+                                                    <label>
+                                                        <span>
+                                                            error: {{cotizacion.error.respuesta}}
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.resultado">
+                                                <div id="limpiar-todo" ng-if="cotizacion.resultado" ng-click="cotizar()"
+                                                    ng-class="{'btn-envia-disabled': !documentoValido() && !paqueteValido() && !mercanciasValidas(), 'btn-cotizar': cotizacion.cod_servicio !==1}">
+                                                    <i class="icon-refresh"></i>
+                                                </div>
+                                                <div class="valores">
+                                                    <span id="flete1">Valor Flete</span>
+                                                    <span id="flete2">$ {{cotizacion.resultado.valor_flete}}</span><br>
+                                                    <span id="manejo1">Flete Variable</span>
+                                                    <span id="manejo2">$ {{cotizacion.resultado.valor_costom}}</span>
+                                                </div>
+                                                <div class="totales">
+                                                    <div class="tiempos">
+                                                        <span>Tiempo de entrega</span>
+                                                        <span id="dias">{{cotizacion.resultado.dias_entrega}}
+                                                            dias</span>
+                                                    </div>
+                                                    <div class="total-rojo">
+                                                        <span>TOTAL*</span>
+                                                        <span id="total-final">$ {{cotizacion.total}}</span>
+                                                    </div>
+                                                </div>
+                                                <p>*El TOTAL es un valor estimado, el envío está sujeto a verificación.
+                                                </p>
+                                                <div class="botones-cotiz">
+                                                    <a class="btn_primary" ng-click="solicitarRecoleccion()"
+                                                        id="hbdRecoleccion" ng-hide="cotizacion.HabRecoleccion">Solicita
+                                                        Recolección</a>
+                                                    <a class="btn_primary" href="/contacto" id="hbdpds">Acércate a un
+                                                        Punto de Servico</a>
+                                                    <a class="btn_primary"
+                                                        ng-click="cotizacion.cod_servicio=102">Limpiar</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="cont-paquete" ng-if="[12,13,102]|contains: cotizacion.cod_servicio">
+                                        <ul>
+                                            <li class="forma-de-pago" ng-if="cotizacion.destino" style="display: block">
+
+                                                <div class="form-group">
+                                                    <p>Forma de pago</p>
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="pago-paq" id="contado-paq-1737877939"
+                                                            value="6" ng-model="cotizacion.forma_pago"><label
+                                                            for="contado-paq-1737877939">Contado</label>
+                                                        <input type="radio" name="pago-paq"
+                                                            id="contraentrega-paq-1685495439" value="7"
+                                                            ng-model="cotizacion.forma_pago"><label
+                                                            for="contraentrega-paq-1685495439">Contraentrega</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="forma-de-pago forma-cataporte" ng-if="cotizacion.forma_pago"
+                                                style="display: none">
+                                                <div class="form-group">
+                                                    <p>¿Requiere Cartaporte? <span class="tooltip-cotizador"
+                                                            data-tooltip-content="#tooltip-cartaporte"><i
+                                                                class="fa fa-info-circle"></i></span></p>
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="cataporte-paq"
+                                                            id="si-cartaporte-paq-697090143" value="1"
+                                                            ng-model="cotizacion.cartaporte"><label
+                                                            for="si-cartaporte-paq-697090143">Si</label>
+                                                        <input type="radio" name="cataporte-paq"
+                                                            id="no-cartaporte-paq-1331532786" value="0"
+                                                            ng-model="cotizacion.cartaporte"><label
+                                                            for="no-cartaporte-paq-1331532786">No</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="datos-documento datos-paquete" ng-if="cotizacion.forma_pago">
+                                                <label class="check_envia" for="declaro-paq-1345364419">
+                                                    <input type="checkbox" id="declaro-paq-1345364419"
+                                                        ng-model="cotizacion.declaro">
+                                                    <span class="check">
+                                                        <img src="images/check.png">
+                                                    </span>
+                                                    Declaro que mi envío no es
+                                                    <strong>
+                                                        <a href="/prohibido" target="_blank">Mercancía de Prohibido
+                                                            Transporte</a>
+                                                    </strong>
+                                                </label>
+
+                                                <div class="form-group unidades">
+                                                    <input type="number" placeholder="Unidades" min="1" max="20"
+                                                        value="1" disabled id="unidades-paq-495109814"
+                                                        style="background: #E3E3E3">
+                                                </div>
+
+                                                <div class="form-group valor">
+                                                    <input type="number" id="valor-paq-1377525365" min="0"
+                                                        placeholder="Valor declarado"
+                                                        ng-model="cotizacion.info_cubicacion[1].declarado"><span
+                                                        class="rojito">$</span>
+                                                </div>
+                                                <div class="form-group peso">
+                                                    <input type="number" id="peso-paq-790085782" value="1" min="1"
+                                                        placeholder="peso"
+                                                        ng-model="cotizacion.info_cubicacion[1].peso"><span
+                                                        class="rojito">kg</span>
+                                                </div>
+                                                <div class="form-group alto">
+                                                    <input type="number" id="alto-paq-320604316" placeholder="Alto"
+                                                        min="1" ng-model="cotizacion.info_cubicacion[1].alto"><span
+                                                        class="rojito">cm</span>
+                                                </div>
+                                                <div class="form-group ancho">
+                                                    <input type="number" id="ancho-paq-1349559781" placeholder="Ancho"
+                                                        min="1" ng-model="cotizacion.info_cubicacion[1].ancho"><span
+                                                        class="rojito">cm</span>
+                                                </div>
+                                                <div class="form-group largo">
+                                                    <input type="number" id="largo-paq-33600647" placeholder="Largo"
+                                                        min="1" ng-model="cotizacion.info_cubicacion[1].largo"><span
+                                                        class="rojito">cm</span>
+                                                </div>
+
+                                                <a class="btn_primary" ng-click="cotizar()"
+                                                    ng-class="{'btn-envia-disabled':  !paqueteValido() }"
+                                                    ng-hide="cotizacion.resultado" id="hbpCotiza">cotiza</a>
+
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.error">
+                                                <label>
+                                                    <span>
+                                                        error: {{cotizacion.error.respuesta}}
+                                                    </span>
+                                                </label>
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.resultado">
+                                                <div id="limpiar-todo" ng-if="cotizacion.resultado" ng-click="cotizar()"
+                                                    ng-class="{'btn-envia-disabled': !documentoValido() && !paqueteValido() && !mercanciasValidas(), 'btn-cotizar': cotizacion.cod_servicio !==1}">
+                                                    <i class="icon-refresh"></i>
+                                                </div>
+                                                <div class="valores">
+                                                    <span id="flete1">Valor Flete</span>
+                                                    <span id="flete2">$ {{cotizacion.resultado.valor_flete}}</span><br>
+                                                    <span id="manejo1">Flete Variable</span>
+                                                    <span id="manejo2">$ {{cotizacion.resultado.valor_costom}}</span>
+                                                </div>
+                                                <div class="cont-totales">
+                                                    <div class="totales">
+                                                        <div class="total-rojo">
+                                                            <span>TOTAL*</span>
+                                                            <span id="total-final-paq-terr">$
+                                                                {{cotizacion.total}}</span>
+                                                        </div>
+                                                        <div class="tiempos">
+                                                            <span>Tiempo de entrega</span>
+                                                            <span
+                                                                id="dias-paq-terr">{{cotizacion.resultado.dias_entrega}}
+                                                                dias</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p>*El TOTAL es un valor estimado, el envío está sujeto a verificación.
+                                                </p>
+                                                <div class="botones-cotiz">
+                                                    <a class="btn_primary" ng-click="solicitarRecoleccion()"
+                                                        hbprecoleccion ng-hide="cotizacion.HabRecoleccion">Solicita
+                                                        Recolección</a>
+                                                    <a class="btn_primary" href="/contacto" id="hbpPDS">Acércate a un
+                                                        Punto de Servico</a>
+                                                    <a class="btn_primary"
+                                                        ng-click="cotizacion.cod_servicio=102">Limpiar</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="cont-mercancias" ng-if="[2,3,103]|contains: cotizacion.cod_servicio">
+                                        <ul>
+                                            <li class="forma-de-pago" ng-if="cotizacion.destino">
+                                                <div class="form-group">
+                                                    <p>Forma de pago</p>
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="pago-merc" id="contado-merc561886832"
+                                                            value="6" ng-model="cotizacion.forma_pago"><label
+                                                            for="contado-merc561886832">Contado</label>
+                                                        <input type="radio" name="pago-merc"
+                                                            id="contraentrega-merc1766142741" value="7"
+                                                            ng-model="cotizacion.forma_pago"><label
+                                                            for="contraentrega-merc1766142741">Contraentrega</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="forma-de-pago forma-cataporte" ng-if="cotizacion.forma_pago"
+                                                style="display: none">
+                                                <div class="form-group">
+                                                    <p>¿Requiere Cartaporte? <span class="tooltip-cotizador"
+                                                            data-tooltip-content="#tooltip-cartaporte"><i
+                                                                class="fa fa-info-circle"></i></span></p>
+
+                                                    <div class="cont-der">
+                                                        <input type="radio" name="cataporte-merc"
+                                                            id="si-cartaporte-merc1032593750" value="1"
+                                                            ng-model="cotizacion.cartaporte"><label
+                                                            for="si-cartaporte-merc1032593750">Si</label>
+                                                        <input type="radio" name="cataporte-merc"
+                                                            id="no-cartaporte-merc2114218109" value="0"
+                                                            ng-model="cotizacion.cartaporte"><label
+                                                            for="no-cartaporte-merc2114218109">No</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="datos-documento datos-merc" ng-if="cotizacion.forma_pago">
+                                                <label class="check_envia" for="declaro-merc18084714">
+                                                    <input type="checkbox" id="declaro-merc18084714"
+                                                        ng-model="cotizacion.declaro">
+                                                    <span class="check">
+                                                        <img src="images/check.png">
+                                                    </span>
+                                                    Declaro que mi envío no es
+                                                    <strong>
+                                                        <a href="/prohibido" target="_blank">Mercancía de Prohibido
+                                                            Transporte</a>
+                                                    </strong>
+                                                </label>
+                                                <div class="tabla-merc" ng-if="cotizacion.declaro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <span>Alto(cm)</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span>Ancho(cm)</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span>Largo(cm)</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span>Peso(kg)</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span>Unidades</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span>Valor declarado</span>
+                                                                </th>
+                                                                <th>
+                                                                    <span> </span>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr colspan="5">
+                                                            </tr>
+                                                            <tr ng-repeat="it in cotizacion.info_cubicacion"
+                                                                ng-if="$index > 0">
+                                                                <td class="centim">
+                                                                    <input type="number" ng-model="it.alto">
+                                                                </td>
+                                                                <td class="centim">
+                                                                    <input type="number" ng-model="it.ancho">
+                                                                </td>
+                                                                <td class="centim">
+                                                                    <input type="number" ng-model="it.largo">
+                                                                </td>
+                                                                <td class="kil">
+                                                                    <input type="number" ng-model="it.peso">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" ng-model="it.cantidad">
+                                                                </td>
+                                                                <td class="precio">
+                                                                    <input type="number" ng-model="it.declarado">
+                                                                </td>
+                                                                <td ng-click="eliminarCubicacion($index)">
+                                                                    <a class="trash">
+                                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                    <a class="add_x" ng-click="agregarCubicacion()">
+                                                        <img src="images/ico_agregar_2.png">
+                                                    </a>
+
+
+                                                </div>
+                                                <a class="btn_primary" ng-click="cotizar()"
+                                                    ng-hide="cotizacion.resultado"
+                                                    ng-class="{'btn-envia-disabled': !mercanciasValidas() }"
+                                                    id="hbmCotiza">cotiza</a>
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.error">
+                                                <label>
+                                                    <span>
+                                                        error: {{cotizacion.error.respuesta}}
+                                                    </span>
+                                                </label>
+                                            </li>
+                                            <li class="total" ng-if="cotizacion.resultado">
+                                                <div id="limpiar-todo" ng-if="cotizacion.resultado" ng-click="cotizar()"
+                                                    ng-class="{'btn-envia-disabled': !documentoValido() && !paqueteValido() && !mercanciasValidas(), 'btn-cotizar': cotizacion.cod_servicio !==1}">
+                                                    <i class="icon-refresh"></i>
+                                                </div>
+                                                <div class="valores">
+                                                    <span id="flete1">Valor Flete</span>
+                                                    <span id="flete2">$ {{cotizacion.resultado.valor_flete}}</span><br>
+                                                    <span id="manejo1">Flete Variable</span>
+                                                    <span id="manejo2">$ {{cotizacion.resultado.valor_costom}}</span>
+                                                </div>
+                                                <div class="cont-totales">
+                                                    <div class="totales">
+                                                        <div class="total-rojo">
+                                                            <span>TOTAL*</span>
+                                                            <span id="total-final-merc-terr">$
+                                                                {{cotizacion.total}}</span>
+                                                        </div>
+                                                        <div class="tiempos">
+                                                            <span>Tiempo de entrega</span>
+                                                            <span
+                                                                id="dias-paq-terr">{{cotizacion.resultado.dias_entrega}}
+                                                                días</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p>*El TOTAL es un valor estimado, el envío está sujeto a verificación.
+                                                </p>
+                                                <div class="botones-cotiz">
+                                                    <a class="btn_primary" ng-click="solicitarRecoleccion()"
+                                                        id="hbmRecoleccion" ng-hide="cotizacion.HabRecoleccion">Solicita
+                                                        Recolección</a>
+                                                    <a class="btn_primary" href="/contacto" id="hbmPDS">Acércate a un
+                                                        Punto de Servico</a>
+                                                    <a class="btn_primary"
+                                                        ng-click="cotizacion.cod_servicio=103">Limpiar</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </form>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="tooltip_templates" style="display: none">
+                    <span id="tooltip-cartaporte">
+                        <p><span>En caso de requerir la devolución de documentos que acompañen el envío (Cartaporte),
+                                <strong>envía</strong> suministrará un sobre especial para la utilización de este
+                                Servicio y tendrá un costo adicional de $2.600, sin importar el
+                                cubrimiento.<u><strong></strong></u></span></p>
+
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="ss-editor-wrapper" style="position: relative">
+                <div class="ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                    data-ss-border-onchange="true" data-ss-id="home-botones-banner" id="home-botones-banner">
+                    <div class="btns_home"><a class="btn_primary" href="/contacto" id="hbPDS">Puntos de Servicio</a> <a
+                            class="btn_primary" href="/recoleccion" id="hbRecoleccion">Solicita Recolección</a>-</div>
+
+                </div>
+            </div>
+
+
+            <div class="cont_menu_sticky" ng-controller="cotizador-ctrl">
+                <ul class="menu_sticky">
+                    <li class="list_border">
+                        <div class="botones-sticky">
+                            <a class="to show_desplega_sticky" id="sticky-buscar"><i class="icon-lupa2"></i></a>
+
+                        </div>
+                    </li>
+                    <li class="desplega_sticky busca_desplega">
+                        <form
+                            onsubmit="window.location = 'https://www.google.com/search?q=site:envia.co '+document.getElementById('busqueda-menu-sticky').value">
+                            <div class="form-group">
+                                <input id="busqueda-menu-sticky" type="search"
+                                    placeholder="¡Te ayudamos a encontrar loque buscas!">
+                                <button><i class="icon-lupa2" style="color: white"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/servicios#documentos-express"><i
+                                class="icon-documento"></i><span>Documentos</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#paquetes-aereos"><i class="icon-paquete"></i><span>Paquetes</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#mercancia-terrestre"><i
+                                class="icon-mercancias"></i><span>Mercancia</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#empresarial"><i class="icon-empresarial"></i><span>Empresarial</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#internacional"><i
+                                class="icon-internacional"></i><span>Internacional</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#recepcion-de-pruebas-de-consumo"><i
+                                class="icon-promociones"></i><span>Promociones</span></a>
+                    </li>
+                    <li>
+                        <a href="/servicios#reparto-con-recaudo"><i class="icon-logistica"></i><span>Logística
+                                e-commerce</span></a>
+                    </li>
+                    <li class="list_border">
+                        <a class="show_desplega_sticky">Rastrea</a>
+                    </li>
+                    <li class="desplega_sticky rastrea_desplega">
+                        <form id="rastrear_menu" ng-submit="rastrear('rastrear_menu')">
+                            <input class="num_guia digito-tracking input-rastreo" maxlength="12" type="text">
+                            <input style="display:none" type="submit">
+
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+            <div class="ss-editor-wrapper" style="position: relative">
+                <div class="ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                    data-ss-border-onchange="true" data-ss-id="home-servicios" id="home-servicios">
+                    <style type="text/css">
+                        .nuevo-pds li {
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+
+                        /* <!-- MEDIASQ --> */
+                        @media (max-width: 768px) {
+                            .back-img .colum {
+                                /* background: green; */
+                                width: 100%;
+                            }
+                        }
+
+                        @media (max-width: 320px) {
+                            .back-img .colum {
+                                /* background: green; */
+                                width: 100%;
+                            }
+                        }
+                    </style>
+                    <div>
+                        <h1 class="ttl">Nuestros Servicios</h1>
+                    </div>
+
+                    <ul class="style_icons_list click_services">
+                        <li><a class="active"> <span> <svg data-name="Capa 1" id="Capa_1" viewBox="0 0 86.56 57.97"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <style type="text/css">
+                                                .cls-1 {
+                                                    fill: #525254;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="cls-1 st0"
+                                            d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                    </svg> <i class="icon-documento"> </i> </span> Documentos <i aria-hidden="true"
+                                    class="fa fa-angle-down"></i> </a></li>
+                        <li><a class> <span> <svg data-name="Capa 1" id="Capa_1" viewBox="0 0 86.56 57.97"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <style type="text/css">
+                                                .cls-1 {
+                                                    fill: #525254;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="cls-1 st0"
+                                            d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                    </svg> <i class="icon-paquete"></i> </span> Paquetes <i aria-hidden="true"
+                                    class="fa fa-angle-down"></i> </a></li>
+                        <li><a class> <span> <svg data-name="Capa 1" id="Capa_1" viewBox="0 0 86.56 57.97"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <style type="text/css">
+                                                .cls-1 {
+                                                    fill: #525254;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="cls-1 st0"
+                                            d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                    </svg> <i class="icon-mercancias"></i> </span> Mercancías <i aria-hidden="true"
+                                    class="fa fa-angle-down"></i> </a></li>
+                    </ul>
+                    <!-- BASE-MAQUETA-AGENCIA --><!-- <div>
+	<h1 class="ttl">Nuestros Servicios</h1>
+</div>
+
+<ul class="style_icons_list click_services">
+	<li><a class="active"> <span> <svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+					<style type="text/css">
+						.st0 {
+							fill-rule: evenodd;
+							clip-rule: evenodd;
+						}
+					</style>
+					<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4 c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+				</svg> <i class="icon-documento"></i> </span> Documentos <i aria-hidden="true" class="fa fa-angle-down"></i> </a></li>
+	<li><a> <span> <svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+					<style type="text/css">
+						.st0 {
+							fill-rule: evenodd;
+							clip-rule: evenodd;
+						}
+					</style>
+					<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4 c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+				</svg> <i class="icon-paquete"></i> </span> Paquetes <i aria-hidden="true" class="fa fa-angle-down"></i> </a></li>
+	<li><a> <span> <svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+					<style type="text/css">
+						.st0 {
+							fill-rule: evenodd;
+							clip-rule: evenodd;
+						}
+					</style>
+					<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4 c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+				</svg> <i class="icon-mercancias"></i> </span> Mercancías <i aria-hidden="true" class="fa fa-angle-down"></i> </a></li>
+</ul> -->
+                </div>
+            </div>
+
+
+            <div class="wrapp_swiper_services">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ss-editor-wrapper ss-editor" style="position: relative"
+                        id="home-servicios-1" data-ss-id="home-servicios-1" data-ss-left="2px" data-ss-top="2px"
+                        data-ss-buttons="true" data-ss-border-onchange="true">
+                        <div class="container">
+                            <style type="text/css">
+                                .button_image:after {
+                                    border-radius: 3px !important;
+                                }
+
+                                /* <!-- MEDIASQ --> */
+                                @media (max-width: 768px) {
+                                    .back-img .colum {
+                                        /* background: green; */
+                                        width: 100%;
+                                    }
+                                }
+
+                                @media (max-width: 320px) {
+                                    .back-img .colum {
+                                        /* background: green; */
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+                            <div class="container">
+                                <div class="container">
+                                    <div class="container">
+                                        <div class="container">
+                                            <div class="cols_services"><img class="medio_transporte"
+                                                    src="images/moto.png"> <img class="circle"
+                                                    src="images/circle_1.png"> <img class="circle rotatenegative"
+                                                    src="images/rotate-figure.png"
+                                                    style="transform: matrix3d(0.334798, -0.942289, 0, 0, 0.942289, 0.334798, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);">
+                                            </div>
+
+                                            <div class="cols_services">
+                                                <!-- <img class="letter_quote quote_hide" src="/images/envia_document_services.png" />  --><img
+                                                    class="letter_quote quote_hide" src="images/des-doc.png"> <img
+                                                    class="letter_quote quote_responsive"
+                                                    src="images/envia_document_services_responsive.png">
+                                                <h3>servicios:</h3>
+
+                                                <div class="content_icons_btn"><a class="button_image"
+                                                        href="/servicios#documentos-express"><span> <i
+                                                                class="icon-documento-express"></i> </span>
+                                                        <span>Documento Express</span></a> <a class="button_image"
+                                                        href="/servicios#documentos-masivos"> <span> <i
+                                                                class="icon-masivos"></i> </span> <span>Documentos
+                                                            Masivos</span> </a> <a class="button_image"
+                                                        href="/servicios#radicacion-de-facturas"> <span> <i
+                                                                class="icon-facturas"></i> </span> <span>Radicación de
+                                                            Factura</span></a> <a class="button_image"
+                                                        href="/servicios#documentos-electronicos"> <span> <i
+                                                                class="icon-doc-electronico-1"></i> </span>
+                                                        <span>Documento Electrónico</span> </a></div>
+                                                <!-- <img class="ico_transporte" src="/images/ico_1.png" /> -->
+
+                                                <div class="text-center"><a class="btn_primary" href="/servicios">conoce
+                                                        más</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BASE-MAQUETA-AGENCIA --><!--
+
+<div class="container">
+  <div class="container">
+    <div class="container">
+      <div class="container">
+        <div class="cols_services"><img class="medio_transporte" src="/images/moto.png" /> <img class="circle" src="/images/circle_1.png" /> <img class="circle rotatenegative" src="/images/rotate-figure.png"
+            style="transform: matrix3d(-0.677167, 0.735829, 0, 0, -0.735829, -0.677167, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);" /></div>
+
+        <div class="cols_services"><img class="letter_quote quote_hide" src="/images/envia_document_services.png" /> <img class="letter_quote quote_responsive" src="/images/envia_document_services_responsive.png" />
+          <h3>servicios:</h3>
+
+          <div class="content_icons_btn"><a class="button_image" href="/servicios#documentos-express"><span> <i class="icon-documento-express"></i> </span> <span>Documento Express</span></a> <a class="button_image"
+              href="/servicios#documentos-masivos"> <span> <i class="icon-masivos"></i> </span> <span>Documentos Masivos</span> </a> <a class="button_image" href="/servicios#radicacion-de-facturas"> <span> <i class="icon-facturas"></i> </span>
+              <span>Radicación de Factura</span></a> <a class="button_image" href="/servicios#documentos-electronicos"> <span> <i class="icon-doc-electronico-1"></i> </span> <span>Documento Electrónico</span></a></div>
+          <img class="ico_transporte" src="/images/ico_1.png" />
+          <div class="text-center"><a class="btn_primary" href="/servicios">conoce más</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ss-editor-wrapper ss-editor" style="position: relative"
+                        id="home-servicios-2" data-ss-id="home-servicios-2" data-ss-left="2px" data-ss-top="2px"
+                        data-ss-buttons="true" data-ss-border-onchange="true">
+                        <div class="container">
+                            <div class="container">
+                                <div class="container">
+                                    <style type="text/css">
+                                        .button_image:after {
+                                            border-radius: 3px !important;
+                                        }
+
+                                        .img-pac {
+                                            padding: 5px !important;
+                                        }
+
+                                        .img-pac span img {
+                                            width: 35px !important;
+                                        }
+
+                                        .button_image span:nth-of-type(1):after {
+                                            right: 0;
+                                            border: 0px solid white;
+                                        }
+
+                                        .cols_services h3 {
+                                            margin-top: 0px !important;
+                                        }
+
+                                        .letter_quote {
+                                            max-width: 102% !important;
+                                            width: 102% !important;
+                                        }
+
+                                        /* <!-- MEDIASQ --> */
+                                        @media (max-width: 768px) {
+                                            .cols_services {
+                                                /* background: green; */
+                                                text-align: center !important;
+                                            }
+
+                                            .letter_quote {
+                                                width: auto !important;
+                                            }
+                                        }
+
+                                        @media (max-width: 320px) {
+                                            .back-img .colum {
+                                                /* background: green; */
+                                                width: 100%;
+                                            }
+                                        }
+                                    </style>
+                                    <div class="container">
+                                        <div class="container">
+                                            <div class="container">
+                                                <style type="text/css">
+                                                    .cols_services .circle-2 {
+                                                        left: 70% !important;
+                                                    }
+                                                </style>
+                                                <div class="cols_services"><img class="medio_transporte"
+                                                        src="images/van-2.png"> <img class="circle circle-2"
+                                                        src="images/circle_2.png"> <img
+                                                        class="circle circle-2 rotatenegative"
+                                                        src="images/rotate-figure2.png"
+                                                        style="transform: matrix3d(-0.533177, -0.846006, 0, 0, 0.846006, -0.533177, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);">
+                                                </div>
+
+                                                <div class="cols_services">
+                                                    <!-- <img class="letter_quote quote_hide" src="/images/envia_paquetes_services.png" />  --><img
+                                                        class="letter_quote quote_hide" src="images/des_pac2023.png">
+                                                    <!-- <img class="letter_quote quote_responsive" src="/images/envia_paquetes_services_responsive.png" />-->
+                                                    <h3>                           subservicios:</h3>
+
+                                                    <div class="content_icons_btn">
+                                                        <!--<a class="button_image img-pac" href="/servicios#paquetes-aereos"><span> <!-- <i class="icon-aereo"></i> --><!--<img alt="" src="/CMS/Content/paq-aer.png" /> <span>Paquete Aéreo</span> --><a
+                                                            class="button_image img-pac"
+                                                            href="/servicios#paquetes-terrestres"><span>
+                                                                <!-- <i class="icon-terrestre"></i>  --> <img alt
+                                                                    src="images/paq-terr.png"> </span> <span>        
+                                                                Paquete Express</span> </a>
+                                                    </div>
+                                                    <!-- <img class="ico_transporte" src="/images/ico_2.png" /> -->
+
+                                                    <div class="text-center"><a class="btn_primary"
+                                                            href="/servicios">conoce más</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- BASE-MAQUETA-AGENCIA --><!-- <div class="container">
+<div class="container">
+<div class="container">
+<style type="text/css">.cols_services .circle-2{
+    left: 70% !important;
+  }
+</style>
+<div class="cols_services"><img class="medio_transporte" src="/CMS/Content/van-2.png" /> <img class="circle circle-2" src="/images/circle_2.png" /> <img class="circle circle-2 rotatenegative" src="/images/rotate-figure2.png" style="transform: matrix3d(0.843248, 0.53752, 0, 0, -0.53752, 0.843248, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);" /></div>
+
+<div class="cols_services"><img class="letter_quote quote_hide" src="/images/envia_paquetes_services.png" /> <img class="letter_quote quote_responsive" src="/images/envia_paquetes_services_responsive.png" />
+<h3>subservicios:</h3>
+
+<div class="content_icons_btn"><a class="button_image" href="/servicios#paquetes-aereos"><span> <i class="icon-aereo"></i> </span> <span>Paquetes Aereos</span> </a><a class="button_image" href="/servicios#paquetes-terrestres"><span> <i class="icon-terrestre"></i> </span> <span>Paquetes Terrestres</span> </a></div>
+<img class="ico_transporte" src="/images/ico_2.png" />
+<div class="text-center"><a class="btn_primary" href="/servicios">conoce más</a></div>
+</div>
+</div>
+</div>
+</div> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide ss-editor-wrapper ss-editor" style="position: relative"
+                        id="home-servicios-3" data-ss-id="home-servicios-3" data-ss-left="2px" data-ss-top="2px"
+                        data-ss-buttons="true" data-ss-border-onchange="true">
+                        <div class="container">
+                            <div class="container">
+                                <div class="container">
+                                    <div class="container">
+                                        <div class="container">
+                                            <style type="text/css">
+                                                .button_image:after {
+                                                    border-radius: 3px !important;
+                                                }
+
+                                                /* <!-- MEDIASQ --> */
+                                                @media (max-width: 768px) {
+                                                    .back-img .colum {
+                                                        /* background: green; */
+                                                        width: 100%;
+                                                    }
+                                                }
+
+                                                @media (max-width: 320px) {
+                                                    .back-img .colum {
+                                                        /* background: green; */
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            </style>
+                                            <div class="container">
+                                                <div class="container">
+                                                    <div class="container">
+                                                        <style type="text/css">
+                                                            .cols_services .circle-2 {
+                                                                left: 70% !important;
+                                                            }
+                                                        </style>
+                                                        <div class="cols_services"><img class="medio_transporte"
+                                                                src="images/npr%20-%20Copy%201.png"><br>
+                                                            <img class="circle circle-2" src="images/circle_2.png"> <img
+                                                                class="circle circle-2 rotatenegative"
+                                                                src="images/rotate-figure3.png"
+                                                                style="transform: matrix3d(-0.999943, -0.011612, 0, 0, 0.011612, -0.999943, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);">
+                                                        </div>
+
+                                                        <div class="cols_services">
+                                                            <!-- <img class="letter_quote quote_hide" src="/images/envia_mercancia_services.png" /> --><img
+                                                                class="letter_quote quote_hide"
+                                                                src="images/des-merc2023.png"> <img
+                                                                class="letter_quote quote_responsive"
+                                                                src="images/envia_mercancia_services_responsive.png">
+                                                            <h3>                          subservicios:</h3>
+
+                                                            <div class="content_icons_btn"><a class="button_image"
+                                                                    href="/servicios#mercancia-terrestre"><span> <i
+                                                                            class="icon-terrestre"></i> </span>
+                                                                    <span>Mercancía Terrestre</span> </a> <a
+                                                                    class="button_image"
+                                                                    href="/servicios#cadena-de-frio"> <span> <i
+                                                                            class="icon-temperatura"></i> </span>
+                                                                    <span>Cadena de Frío</span> </a> <a
+                                                                    class="button_image"
+                                                                    href="/servicios#mercancia-aerea"> <span> <i
+                                                                            class="icon-aereo"></i> </span>
+                                                                    <span>Mercancía Aérea</span> </a>
+                                                                <!--
+ <a class="button_image" href="/servicios#semimasivos"> <span> <i class="icon-semimasivo"></i> </span> <span>Semimasivo</span> </a> -->
+                                                            </div>
+                                                            <!-- <img class="ico_transporte" src="/images/ico_3.png" /> -->
+
+                                                            <div class="text-center"><a class="btn_primary"
+                                                                    href="http://envia.co/servicios">conoce más</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- BASE-MAQUETA-AGENCIA --><!-- <div class="container">
+  <div class="container">
+    <div class="container">
+      <style type="text/css">
+        .cols_services .circle-2 {
+          left: 70% !important;
+        }
+      </style>
+      <div class="cols_services"><img class="medio_transporte" src="/CMS/Content/npr - Copy 1.png" /><br />
+        <img class="circle circle-2" src="/images/circle_2.png" /> <img class="circle circle-2 rotatenegative" src="/images/rotate-figure3.png"
+          style="transform: matrix3d(-0.971879, 0.235504, 0, 0, -0.235504, -0.971879, 0, 0, 0, 0, 1, 0, -142.5, 0, 0, 1);" /></div>
+
+      <div class="cols_services"><img class="letter_quote quote_hide" src="/images/envia_mercancia_services.png" /> <img class="letter_quote quote_responsive" src="/images/envia_mercancia_services_responsive.png" />
+        <h3>subservicios:</h3>
+
+        <div class="content_icons_btn"><a class="button_image" href="/servicios#mercancia-terrestre"><span> <i class="icon-terrestre"></i> </span> <span>Mercancía Terrestre</span> </a> <a class="button_image" href="/servicios#cadena-de-frio">
+            <span> <i class="icon-temperatura"></i> </span> <span>Cadena de frío</span> </a> <a class="button_image" href="/servicios#mercancia-aerea"> <span> <i class="icon-aereo"></i> </span> <span>Mercancía Aerea</span> </a> <a
+            class="button_image" href="/servicios#semimasivos"> <span> <i class="icon-semimasivo"></i> </span> <span>Semimasivos</span> </a></div>
+        <img class="ico_transporte" src="/images/ico_3.png" />
+        <div class="text-center"><a class="btn_primary" href="/servicios/">conoce más</a></div>
+      </div>
+    </div>
+  </div>
+</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a href="javascript:void(0)" class="arrow_prev">
+                    <i class="icon-arrow-left"></i>
+                </a>
+                <a href="javascript:void(0)" class="arrow_next">
+                    <i class="icon-arrow-right"></i>
+                </a>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="ss-editor-wrapper" style="position: relative">
+                <div class="other ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                    data-ss-border-onchange="true" data-ss-id="home-otros-servicios" id="home-otros-servicios">
+                    <style type="text/css">
+                        .nuevo-pds li {
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+
+                        /* <!-- MEDIASQ --> */
+                        @media (max-width: 768px) {
+                            .back-img .colum {
+                                /* background: green; */
+                                width: 100%;
+                            }
+                        }
+
+                        @media (max-width: 320px) {
+                            .back-img .colum {
+                                /* background: green; */
+                                width: 100%;
+                            }
+                        }
+                    </style>
+                    <div class="other">
+                        <h2 class="ttl">otros Servicios</h2>
+
+                        <ul class="style_icons_list hide_responsive">
+                            <li><a href="/servicios#empresarial"><span> <svg data-name="Capa 1" id="Capa_1"
+                                            viewBox="0 0 86.56 57.97" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <style type="text/css">
+                                                    .cls-1 {
+                                                        fill: #525254;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="cls-1 st0"
+                                                d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                        </svg> <i class="icon-empresarial"></i> </span> Empresarial </a></li>
+                            <li><a href="/servicios#internacional"><span> <svg data-name="Capa 1" id="Capa_1"
+                                            viewBox="0 0 86.56 57.97" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <style type="text/css">
+                                                    .cls-1 {
+                                                        fill: #525254;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="cls-1 st0"
+                                                d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                        </svg> <i class="icon-internacional"></i> </span> Internacional </a></li>
+                            <li><a href="/servicios#recepcion-de-pruebas-de-consumo"><span> <svg data-name="Capa 1"
+                                            id="Capa_1" viewBox="0 0 86.56 57.97" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <style type="text/css">
+                                                    .cls-1 {
+                                                        fill: #525254;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="cls-1 st0"
+                                                d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                        </svg> <i class="icon-promociones"></i> </span> Promociones </a></li>
+                            <li><a href="/servicios#reparto-con-recaudo"><span> <svg data-name="Capa 1" id="Capa_1"
+                                            viewBox="0 0 86.56 57.97" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <style type="text/css">
+                                                    .cls-1 {
+                                                        fill: #525254;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="cls-1 st0"
+                                                d="M86.51,2.31,73.8,56.5A1.87,1.87,0,0,1,72,58H1.88A1.89,1.89,0,0,1,.05,55.65L12.74,1.47A1.89,1.89,0,0,1,14.58,0H84.67A1.89,1.89,0,0,1,86.51,2.31Z" />
+                                        </svg> <i class="icon-logistica"></i> </span> Logística e-commerce </a></li>
+                        </ul>
+                    </div>
+                    <!-- BASE-MAQUETA-AGENCIA --><!-- <div class="other">
+	<h2 class="ttl">otros Servicios</h2>
+
+	<ul class="style_icons_list hide_responsive">
+		<li><a href="/servicios#empresarial"><span>
+					<svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+						<style type="text/css">
+							.st0 {
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+							}
+						</style>
+						<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4
+                        c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+					</svg> <i class="icon-empresarial"></i> </span> Empresarial </a></li>
+		<li><a href="/servicios#internacional"><span>
+					<svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+						<style type="text/css">
+							.st0 {
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+							}
+						</style>
+						<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4
+                        c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+					</svg> <i class="icon-internacional"></i> </span> Internacional </a></li>
+		<li><a href="/servicios#recepcion-de-pruebas-de-consumo"><span>
+					<svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+						<style type="text/css">
+							.st0 {
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+							}
+						</style>
+						<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4
+                        c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+					</svg> <i class="icon-promociones"></i> </span> Promociones </a></li>
+		<li><a href="/servicios#reparto-con-recaudo"><span>
+					<svg id="Layer_1" style="enable-background:new 0 0 200 144;" version="1.1" viewbox="0 0 200 144" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+						<style type="text/css">
+							.st0 {
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+							}
+						</style>
+						<path class="st0" d="M153.7,141.9H19.3c-10.2,0-18.6-8.4-18.6-18.6l27-104C32.6,6.7,36.1,0.7,46.3,0.7h134.4
+                        c10.2,0,18.6,8.4,18.6,18.6l-27,104C172.3,133.5,163.9,141.9,153.7,141.9z"></path>
+					</svg> <i class="icon-logistica"></i> </span> Logística e-commerce </a></li>
+	</ul>
+</div> -->
+                </div>
+            </div>
+
+            <div class="ss-editor-wrapper" style="position: relative">
+                <div class="ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                    data-ss-border-onchange="true" data-ss-id="home-nuestros-clientes" id="home-nuestros-clientes">
+                    <h2 class="ttl">nuestros Clientes</h2>
+
+                </div>
+            </div>
+
+            <div class="container_envia">
+                <div class="clientes">
+                    <div class="contain_slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.cinecolombia.com/" target="_blank"><img
+                                            src="images/logo_1.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.natura.com.co/" target="_blank"><img
+                                            src="images/logo_2.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://store.sony.com.co/store" target="_blank"><img
+                                            src="images/logo_3.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.alkosto.com/" target="_blank"><img
+                                            src="images/logo_4.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a href="https://www.croydon.com.co/" target="_blank"><img
+                                            src="images/croydon-05.png"> </a></div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="content_logo"><a
+                                        href="https://www.farmalisto.com.co/?utm_source=portal_web&utm_medium=envia&utm_campaign=envia&utm_term=envia"
+                                        target="_blank"><img src="images/Logo_Farmalisto_387x317.png"> </a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="arrow_prev">
+                        <i class="icon-arrow-left"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="arrow_next">
+                        <i class="icon-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cifras ss-editor-wrapper" style="position: relative">
+                <div class="ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                    data-ss-border-onchange="true" data-ss-id="home-cifras" id="home-cifras">
+                    <h2 class="ttl">nuestras Cifras</h2>
+
+                    <div class="fecha">
+                        <h3>2020</h3>
+                    </div>
+
+
+                </div>
+
+                <div class="container">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div id="contador_1"></div>
+                        <h3 class="document_num" data-num-max="{{cifras.unidoc}}">0</h3>
+                        <p>documentos </p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div id="contador_2"></div>
+                        <h3 class="document_num" data-num-max="{{cifras.unipaq}}">0</h3>
+                        <p>paquetes</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div id="contador_3"></div>
+                        <h3 class="document_num" data-num-max="{{cifras.unimer}}">0</h3>
+                        <p>mercancías</p>
+                    </div>
+                    <div class=" col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div id="contador_4"></div>
+                        <h3 class="document_num" data-num-max="{{cifras.kilos}}">0</h3>
+                        <p>kilos transportados</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="wrapp_noti_envia">
+                <div class="ss-editor-wrapper" style="position: relative">
+                    <div class="ss-editor" data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                        data-ss-border-onchange="true" data-ss-id="home-notienvia" id="home-notienvia">
+                        <h2 class="ttl">notienvía<span>(nuestro blog)</span></h2>
+
+                    </div>
+                </div>
+                <div class="container">
+
+
+                    <div class="cont_imagen_blog" style="background-image: url(images/repartoconrecaudo.png);">
+                        <a href="/noti-envia/aumenta-tus-ventas-con-nuestro-servicio-de-reparto-con-recaudo">
+                            <div class="info_noti content_doot">
+                                <h4>Servicios</h4>
+                                <p>Aumenta tus ventas con nuestro servicio de Reparto con Recaudo</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cont_imagen_blog" style="background-image: url(images/Bonyurt.jpg);">
+                        <a href="/noti-envia/campana-vasos-bon-yurt-home">
+                            <div class="info_noti content_doot">
+                                <h4>envía Promociones</h4>
+                                <p>Campaña Vasos Bon Yurt Home</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cont_imagen_blog" style="background-image: url(images/Noticia-externa.jpg);">
+                        <a href="/noti-envia/no-mas-esperas-en-linea">
+                            <div class="info_noti content_doot">
+                                <h4>Actualidad</h4>
+                                <p>¡No más esperas en línea!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cont_imagen_blog" style="background-image: url(images/noticia.jpg);">
+                        <a href="/noti-envia/ha-llegado-enviabox-en-su-version-20">
+                            <div class="info_noti content_doot">
+                                <h4>Actualidad</h4>
+                                <p>Ha llegado envíabox en su versión 2.0</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn_primary" title="Noti Envía" href="/noti-envia">ir a notienvía</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cont_letter ">
+                <div class="ss-editor-wrapper" style="position: relative">
+                    <div class="ss-editor " data-ss-left="2px" data-ss-top="2px" data-ss-buttons="true"
+                        data-ss-border-onchange="true" data-ss-id="home-extra" id="home-extra">
+                        <div class="container">
+                            <div class="cols_letters"><img src="images/letter_1.png"> <img class="letter_responsive"
+                                    src="images/letter_1responsive.png">
+                                <p>Inscríbete en un Punto de Servicio <em><strong>envía</strong></em>, acumula puntos
+                                    enviando con nosotros tus Documentos, Paquetes y Mercancías, y redímelos por
+                                    fabulosos premios.</p>
+                                <a class="button_image img-pac" href="/gana"> <span> <i class="icon-gana"></i> </span>
+                                    <span> <strong>envía y gana</strong> Programa de puntos </span> </a>
+                            </div>
+
+                            <div class="cols_letters"><img src="images/letter_2.png"> <img class="letter_responsive"
+                                    src="images/letter_2responsive.png">
+                                <p>Ofrece nuestros Servicios en tu establecimiento, mejora tus ingresos y conviértete en
+                                    un Aliado Estratégico de <em><strong>envía.</strong></em></p>
+                                <a class="button_image img-pac" href="/nuestra-red"><span><i class="icon-puntos"></i>
+                                    </span> <span> Únete a nuestra Red de PDS</span> </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer ng-controller="footer-ctrl as ctrl">
+
+            <div class=" ss-editor-wrapper ss-editor" style="position: relative" data-ss-left="2px" data-ss-top="2px"
+                data-ss-buttons="true" data-ss-border-onchange="true" data-ss-id="footer" id="footer">
+                <style type="text/css">
+                    .footer_finish {
+                        background: #565657 !important;
+                    }
+
+                    footer li {
+                        font-size: 15px;
+                        margin: 5px 0;
+                    }
+
+                    .social_footer li {
+                        margin-left: 40px;
+                    }
+
+                    .container_envia .cols_footer h4 {
+                        font-size: 17px;
+                    }
+
+                    .cols_footer {
+                        text-align: left !important;
+                    }
+
+                    .cols_logo p {
+                        font-size: 15px;
+                    }
+
+                    /* .container_envia {
+    width: 100%;
+  } */
+                    .social_footer {
+                        text-align: right;
+                        margin-top: 5%;
+                    }
+
+                    .cont-logos {
+                        text-align: right !important;
+                    }
+
+                    .cont-logos p {
+                        color: white !important;
+                        display: block;
+                        font-size: 16px;
+                    }
+
+                    .copy {
+                        color: white;
+                        font-size: 14px;
+                        text-align: right;
+                        padding-top: 2em;
+                    }
+
+                    footer img {
+                        width: 22%;
+                    }
+
+                    .ttl_diferent:after {
+                        border-radius: 2px;
+                    }
+
+                    .footer-v2 {
+                        margin: auto;
+                        /* width: 100%; */
+                    }
+
+                    .f-bott {
+                        margin: auto;
+                    }
+
+                    /* <!-- MEDIASQ --> */
+                    @media (max-width: 768px) {
+                        .cont-logos {
+                            text-align: center !important;
+                        }
+
+                        .social_footer {
+                            text-align: center !important;
+                        }
+
+                    }
+                </style>
+                <div class="container_envia row footer-v2">
+                    <div class="cols_footer width-1">
+                        <h4 class="ttl_diferent" style="text-align: center;"><span>centros de Operación Regional</span>
+                        </h4>
+
+                        <ul>
+                            <li>Bogotá D.C. (Colombia)</li>
+                            <li>Carrera 88 # 17B - 10</li>
+                            <li>Tel: (1) 4954711</li>
+                            <li>contactanos@envia.co</li>
+                        </ul>
+                        <a class="btn_primary" href="/contacto">conoce más</a>
+                    </div>
+
+                    <div class="cols_footer width-2">
+                        <div>
+                            <h4 class="ttl_diferent"><span>links de interés</span></h4>
+                        </div>
+
+                        <ul><!-- <li><a href="https://envia.co/gana"><span>envía</span>y gana</a></li> -->
+                            <li><a href="/promociones"><b><em>envía</em> </b>Pro<b></b>mociones</a></li>
+                            <li><a href="/faq">Preguntas Frecuentes</a></li>
+                            <li><a href="http://200.69.100.66:8081/siaceswebexito/">Siaces Éxito</a></li>
+                            <li><a href="/documentos">Documentos Legales</a></li>
+                            <li><a href="/pqr">PQRS</a></li>
+                        </ul>
+
+                        <ul>
+                            <li><a
+                                    href="https://www.envia.co/CMS/Content/POLITICA%20DE%20TRATAMIENTO%20DE%20DATOS%20PERSONALES%20-%20Copy%201.pdf">Política
+                                    de Tratamiento de Datos Personales</a></li>
+                            <li><a href="/servicios">Servicios</a></li>
+                            <li><a href="/contacto">Solicitar Visita Comercial</a></li>
+                            <li><a href="/nuestra-red">Red de Puntos de Servicio</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="cols_footer width-3">
+                        <ul class="social_footer">
+                            <li><a href="https://www.facebook.com/envia.co" target="_blank"><i aria-hidden="true"
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/envia.co/" target="_blank"><i aria-hidden="true"
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCS-lDXqcz-P-2gQ2nNJ5BEw" target="_blank"><i
+                                        aria-hidden="true" class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+
+                        <div class="cont-logos">
+                            <p>Aliados</p>
+                            <a href="https://www.easyfly.com.co/" target="_blank"><img src="images/logo-easyfly.png">
+                            </a> <a href="http://www.coltanques.com.co/" target="_blank"> <img
+                                    src="images/logo-coltanques.png" style="margin: 0px;margin-left: 15px;"> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="container_envia container_envia row f-bott">
+                        <div class="cols_logo col-sm-6 col-md-6 col-lg-6 col-xl-6" style="text-align: left;"><a
+                                href="https://www.supertransporte.gov.co/" target="_blank"><img
+                                    src="images/logo-super_1.png" style="width: 144px; height: 44px;"></a></div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <p class="copy">© 2020 <strong><em>envía</em></strong> : Todos los Derechos reservados</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="iridian">
+                <span>Powere by</span>
+                <a target="_blank" href="http://iridian.co/">
+                    <img src="images/iridian2.png">
+                </a>
+            </div>
+        </footer>
+
+
+        <div class="boton-up">
+            <a href="javascript:topFunction();" id="scrollTopBtn">
+                <svg xmlns="" viewBox="0 0 21.4 12.21">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #d2001b;
+                            }
+                        </style>
+                    </defs>
+                    <title>arrow</title>
+                    <g id="Capa_2" data-name="Capa 2">
+                        <g id="registro">
+                            <path class="cls-1"
+                                d="M0,10.68A1.46,1.46,0,0,1,.47,9.62L9.63.44A1.59,1.59,0,0,1,10.71,0a1.56,1.56,0,0,1,1.08.44L21,9.63a1.46,1.46,0,0,1,.44,1.06A1.49,1.49,0,0,1,21,11.77a1.52,1.52,0,0,1-1.06.44h0a1.52,1.52,0,0,1-1.06-.44L10.69,3.64,2.58,11.77a1.55,1.55,0,0,1-2.14,0A1.5,1.5,0,0,1,0,10.68Z" />
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/slideout.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/TweenMax.js"></script>
+        <script src="js/jquery.rateyo.min.js"></script>
+        <script src="js/TimelineMax.js"></script>
+        <script src="js/jquery.dotdotdot.js"></script>
+        <script src="js/jquery.animateNumber.min.js"></script>
+        <script src="js/transition.js"></script>
+        <script src="js/collapse.js"></script>
+        <script src="js/jquery.onscreen.min.js"></script>
+        <script src="js/tooltipster.bundle.min.js"></script>
+        <script src="js/jssocials.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.js"></script>
+        <script src="js/easyzoom.js"></script>
+        <script src="js/slideout.min.js"></script>
+        <script src="js/videojs-ie8.min.js"></script>
+        <script src="js/video.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery.charactersRemaining.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/lottie.js"></script>
+        <script src="js/loadingoverlay.min_1.js"></script>
+        <script src="js/jquery.fs.stepper.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/carrito.js"></script>
+        <script src="js/restful.standalone.js"></script>
+        <script src="js/loadingoverlay.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="js/angular-cookies.js"></script>
+        <script src="js/ui-bootstrap.js"></script>
+        <script src="js/ui-bootstrap-tpls.js"></script>
+        <script src="js/notify.js"></script>
+        <script src="js/equalize.min.js"></script>
+        <script src="js/ss-app.js"></script>
+        <script src="js/jquery.matchHeight.js"></script>
+        <script src="js/jquery.matchHeight.js"></script>
+        <script type="text/javascript" src="js/selectize.min.js"></script>
+        <script type="text/javascript" src="js/angular-selectize.js"></script>
+        <script src="js/sifter.js"></script>
+        <script src="js/microplugin.js"></script>
+        <script src="js/moment-with-locales.js"></script>
+        <script src="js/bootstrap-datetimepicker.js"></script>
+        <script src="js/selectize.js"></script>
+        <script src="js/angular-base64-upload.min.js"></script>
+        <script src="js/angular-facebook.min.js"></script>
+        <script src="js/es.js"></script>
+
+        <script src="js/botscript.js"></script>
+
+
+
+        <script>
+            lottie.loadAnimation({
+                container: contador_1,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/js/animaciones_contador/primero/data.json'
+            });
+            lottie.loadAnimation({
+                container: contador_2,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/js/animaciones_contador/segundo/data.json'
+            });
+            lottie.loadAnimation({
+                container: contador_3,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/js/animaciones_contador/tercero/data.json'
+            });
+            lottie.loadAnimation({
+                container: contador_4,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/js/animaciones_contador/cuarto/data.json'
+            });
+
+
+            $('.show_form').click(function () {
+                $('.show_form').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            window.onload = function () {
+                setTimeout(function () {
+                    //console.log("Swiper banner")
+                    var swiperBannerHome = new Swiper('.cont_rotador',
+                        {
+                            autoplay: 6000,
+                            speed: 600,
+                            prevButton: '.swiper-button-next',
+                            nextButton: '.swiper-button-prev',
+                            loop: true
+                        });
+                }, 2000);
+
+            };
+
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+
+
+
+</body>
+
+</html>

